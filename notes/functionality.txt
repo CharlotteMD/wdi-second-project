@@ -1,0 +1,59 @@
+Main navbar
+- Home - http://app/
+- Login - http://app/login
+- Register as a user - http://app/register
+
+
+Homepage
+http://app/
+
+Jumbotron with register and login links
+Register - http://app/register
+Login - http://app/login
+
+
+Register
+http://app/register
+
+On submit, info is added to user db
+User is redirected to login - http://app/login
+
+Button on form also allows you to go to the login page - http://app/login
+
+Login
+http://app/login
+
+On submit, info on form is checked with user db
+If a user is found, user is redirected to their profile page - http://app/user/:id
+If no user found, show warning message
+Show user info from user schema for that particular entry
+
+
+Profile
+http://app/user/:id
+
+Guest name is displayed as h2 - user.name user.surname
+
+Guest profile - h3
+image - user.image
+Get to know user.name - h4
+user.seatPlan - p
+also lists user.diet if relevant
+Button to edit your profile linking to - http://app/user/:id/edit - this page will look the same as the user register page but will have all the user data for that id as a placeholder
+Button to delete your profile - http://app/user/:id/delete - there should be a warning message first and then profile is deleted from user schema and then user is redirected to home - http://app/
+
+Upcoming weddings - h3
+Lists schema rsvps including wedding.coupleImage
+
+On button wedding.partner1 & wedding.partner2 wedding - links to http://app/wedding/:id
+underneath small label wedding.date - wedding.venue
+
+x button next to the wedding button deletes the wedding rsvp from the user schema as well as the guest from the weddding schema
+wedding button also removed from upcoming weddings list
+
+beneath that you can rsvp to a new wedding
+text box to put wedding id into (possibly wedding unique username for improved UX)
+on submit, compare wedding id to wedding ids in wedding db - if one is found, list in upcoming weddings
+if one is not found show flash message
+page refreshes with updated user.rsvps schema
+under that is create a new wedding button which links to http://app/wedding/new

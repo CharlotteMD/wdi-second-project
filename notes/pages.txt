@@ -1,0 +1,87 @@
+Partials
+
+Main navbar
+  - Homepage, login or register
+  - Once logged in login becomes logout on main navbar
+  - Register is also hidden
+  - Once logged in, view profile also becomes an option
+    - Logged in navbar:
+        - home, logout, user profile
+
+Secondary navbar only shows on wedding pages that link to that weddings id
+  - X & Y's wedding - links to main page for that wedding
+  - Guest List - links to a page showing all guests linked to that wedding schema
+  - Guest Book - links to all comments in the book schema linked to that wedding
+
+
+Homepage
+http://wedding/
+
+Main navbar from partials
+
+Jumbotron with register and login links
+Register - http://wedding/register
+Login - http://wedding/login
+Branded background image
+
+Short description of the app
+- year book for weddings
+- live feed on the big day
+- fun to look back on in years to come and show your children
+
+
+Register
+http://wedding/register
+Simple form with user schema info:
+
+  - name - text box - req
+  - surname - text box - req
+  - email address - email box - req
+  - password - password box - req
+  - password confirmation - password box - req
+  - image - image upload form, instructions that this profile picture will appear in all guest books - req
+  - info for seating plan - text box with a few lines, placeholder explains the type of things to write - req
+  - dietary requirements - radio buttons where you can select more than one
+    - halal
+    - kosher
+    - vegetarian
+    - vegan
+    - gluten free
+    - alcohol free
+    - allergy - please email us with details
+    - other - please email us with details
+
+Submit button
+Also a button that links to the login page
+
+Login
+http://wedding/login
+Simple form with space for email and password
+Submit button
+Also a button that links to the register page
+
+
+Once logged in the navbar changes
+
+
+Guest profile
+http://wedding/user/:id
+Shows which weddings the user is attending and their profile info
+
+Guest name - h2
+
+Upcoming weddings - h3
+image of couple - wedding.image1, next to button with :id & :id's wedding, beneath that small text that says wedding.date and wedding.venue
+also option to say - no longer can attend - need a warning message to say are you sure you want to permanently delete your rsvp from this wedding
+
+RSVP to a wedding - h4
+text box where you can submit the wedding:id or unique wedding username - depending on what is more user friendly and easier on schema which the bride & groom will give you on paper invites
+submit button to compare that id to ids in the wedding schema
+if a wedding is found, it is added to the list above - image, x&y's wedding button - and into the user schema
+if the delete button is pressed the process is reversed, remove wedding id from user schema and user id from wedding schema
+
+Your profile - h4
+Image from user schema
+info on dietary
+seating plan details - note that this will appear in the guest list of weddings you have rsvpd to
+edit profile button which links to http://wedding/user/:id/edit

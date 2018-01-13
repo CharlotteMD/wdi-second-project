@@ -1,0 +1,49 @@
+User schema
+
+userid
+name - name
+surname - surname
+email address - email
+password
+password confirmation
+image - userImage
+info for seating plan - seatPlan
+dietary requirements - diet
+weddings being attended - ids of weddings rsvpd to - rsvps
+
+
+Wedding schema
+
+weddingid
+createdby - your user id
+fiance - their user id
+
+date of wedding
+venue - can be multiple venues
+images of couple - coupleImage
+extraImages - string 
+info about wedding
+
+guests - guest user ids from user schema - need name, surname and id, also image
+
+
+Guest book schema
+
+bookid
+createdby - user id, also need name, surname and image from user id
+message to couple
+
+favStory - displayed in a carousel of comments
+advice - ditto
+child - shown in a leaderboard
+song - shown in a leaderboard
+dance - shown in a poll
+
+fav image of the couple - shown in carousel
+
+fun questions for polls and graphs
+1. What's your favourite story about us?
+2. What is the best marriage advice you can give us?
+3. What should we call our first child?
+4. What songs should we play at the reception?
+5. Who will be first on the dance floor?
