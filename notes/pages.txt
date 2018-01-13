@@ -15,13 +15,13 @@ Secondary navbar only shows on wedding pages that link to that weddings id
 
 
 Homepage
-http://wedding/
+http://app/
 
 Main navbar from partials
 
 Jumbotron with register and login links
-Register - http://wedding/register
-Login - http://wedding/login
+Register - http://app/register
+Login - http://app/login
 Branded background image
 
 Short description of the app
@@ -31,7 +31,7 @@ Short description of the app
 
 
 Register
-http://wedding/register
+http://app/register
 Simple form with user schema info:
 
   - name - text box - req
@@ -55,7 +55,7 @@ Submit button
 Also a button that links to the login page
 
 Login
-http://wedding/login
+http://app/login
 Simple form with space for email and password
 Submit button
 Also a button that links to the register page
@@ -65,10 +65,15 @@ Once logged in the navbar changes
 
 
 Guest profile
-http://wedding/user/:id
+http://app/user/:id
 Shows which weddings the user is attending and their profile info
 
 Guest name - h2
+
+Your Wedding - h3
+Includes deleting and editing your wedding
+http://app/user/:id/wedding/:id/edit
+http://app/user/:id/wedding/:id/delete
 
 Upcoming weddings - h3
 image of couple - wedding.image1, next to button with :id & :id's wedding, beneath that small text that says wedding.date and wedding.venue
@@ -80,8 +85,22 @@ submit button to compare that id to ids in the wedding schema
 if a wedding is found, it is added to the list above - image, x&y's wedding button - and into the user schema
 if the delete button is pressed the process is reversed, remove wedding id from user schema and user id from wedding schema
 
+Create a wedding - h4
+http://app/user/:id/wedding/new
+
 Your profile - h4
 Image from user schema
 info on dietary
 seating plan details - note that this will appear in the guest list of weddings you have rsvpd to
-edit profile button which links to http://wedding/user/:id/edit
+edit profile button which links to http://app/user/:id/edit
+delete profile button
+
+Your Guest Book Comments - h4
+http://app/user/:id/wedding/:id/guest/show
+http://app/user/:id/wedding/:id/guest/show/edit
+
+
+The Guest book
+http://app/user/:id/wedding/:id/guest/:id
+Shows all comments written for that wedding, answering all the questions in the book schema
+anyone who is logged in with an id linked to the wedding that is linked to the guest book can write comments or vote on polls

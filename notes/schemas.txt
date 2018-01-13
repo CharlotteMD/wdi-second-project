@@ -15,14 +15,13 @@ weddings being attended - ids of weddings rsvpd to - rsvps
 Wedding schema
 
 weddingid
+weddingRef - unique wedding reference which you can give to guests - system needs to check it is unique - req
 createdby - your user id
 fiance - their user id
 
-date of wedding
-venue - can be multiple venues
-images of couple - coupleImage
-extraImages - string 
-info about wedding
+date of wedding - req
+venue - req
+images of couple - coupleImage - req
 
 guests - guest user ids from user schema - need name, surname and id, also image
 
