@@ -10,7 +10,7 @@ function sessionsCreate(req, res, next) {
     .then((user) => {
       if(!user || !user.validatePassword(req.body.password)) {
         req.flash('danger', 'Unknown email/password combination');
-        return res.redirect('users/login');
+        return res.redirect('/login');
       }
 
       req.session.userId = user.id;

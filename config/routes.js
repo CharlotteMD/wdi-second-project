@@ -18,7 +18,7 @@ router.route('/users/new')
 // should redirect to login page
 
 // Login
-router.route('/users/login')
+router.route('/login')
   .get(sessions.new)
   .post(sessions.create);
 
