@@ -6,15 +6,6 @@
   </div>
 </div>
 
-ref: { type: String, required: true, trim: true, unique: true },
-createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-fianceUsername: { type: String, required: true },
-date: { type: Date },
-venue: { type: String, required: true },
-imageMain: { type: String, required: true },
-guests: [{ type: mongoose.Schema.ObjectId, ref: 'User'}],
-questions: [{ type: mongoose.Schema.ObjectId, ref: 'Question'}]
-
 <form class="new-user" form method="POST" action="/weddings/new">
   <div class="form-row">
     <div class="col">
@@ -39,26 +30,17 @@ questions: [{ type: mongoose.Schema.ObjectId, ref: 'Question'}]
     </div>
   </div>
 
-  <%# <div class="form-row">
-    <div class="col">
-      <label for="date">Date</label>
-      <input type="date" class="form-control" placeholder="Date" id="date" name="date">
-    </div>
-    <div class="col">
-      <label for="venue" id="venue">Venue</label>
-      <input type="text" class="form-control" placeholder="Venue" name="venue">
-    </div>
-  </div> %>
+  <div class="images">
+    <label for="imageMain">Image of you two</label>
+    <input type="text" class="form-control" placeholder="Photo of the happy couple" id="imageMain" name="imageMain">
+  </div>
 
-  <%# <div class="custom-file">
-    <input type="file" class="custom-file-input" id="image" name="image">
-    <label class="custom-file-label" for="customFile">Upload your profile picture</label>
-  </div> %>
+  <div class="guests">
+    <label for="guests">Search our system by email</label>
+    <input type="text" class="form-control" placeholder="Find your guests by their email" id="guests" name="guests">
+    <button type="submit" class="btn btn-primary">Search</button>
+  </div>
 
-  <div class="form-group">
-     <label for="seatPlan" id="seatPlan" name="seatPlan">Please provide a little information about yourself so that other guests can get to know you (hobbies, job, interests etc..)</label>
-     <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

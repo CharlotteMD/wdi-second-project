@@ -1,1 +1,46 @@
 <h1>Edit Wedding</h1>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Edit Your Wedding</h1>
+  </div>
+</div>
+
+<form class="new-user" form method="POST" action="/weddings/edit">
+  <div class="form-row">
+    <div class="col">
+      <label for="ref">Unique Reference</label>
+      <input type="text" class="form-control" placeholder="Unique Reference" id="ref" name="ref" value="ref">
+    </div>
+    <div class="col">
+      <label for="fiance">Search our system by email</label>
+      <input type="text" class="form-control" placeholder="Find your fiance by their email" id="fiance" name="fiance" value="fiance">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col">
+      <label for="date">Date</label>
+      <input type="date" class="form-control" placeholder="Date" id="date" name="date" value="date">
+    </div>
+    <div class="col">
+      <label for="venue" id="venue">Venue</label>
+      <input type="text" class="form-control" placeholder="Venue" name="venue" value="venue">
+    </div>
+  </div>
+
+  <div class="images">
+    <label for="imageMain">Image of you two</label>
+    <input type="text" class="form-control" placeholder="Photo of the happy couple" id="imageMain" name="imageMain" value="imageMain">
+  </div>
+
+  <div class="guests">
+    <label for="guests">Search our system by email</label>
+    <input type="text" class="form-control" placeholder="Find your guests by their email" id="guests" name="guests" value="guests">
+    <button type="submit" class="btn btn-primary">Search</button>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
