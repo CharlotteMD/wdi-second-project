@@ -32,6 +32,11 @@ router.route('/users/:id')
   .put(secureRoute, users.update)
   .delete(secureRoute, users.delete);
 
+// New Wedding
+// Show on user page
+router.route('/weddings/new')
+  .get(secureRoute, weddings.new);
+
 // Show Wedding page including all questions and comments
 router.route('/weddings/:id')
   .get(weddings.show)
@@ -53,10 +58,7 @@ router.route('/weddings/:id/edit')
 router.route('/answers/:id/edit')
   .get(secureRoute, answers.edit);
 
-// New Wedding
-// Show on user page
-router.route('/weddings/new')
-  .get(secureRoute, weddings.new);
+
 
 // New question
 // Show on Wedding page
