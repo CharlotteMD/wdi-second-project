@@ -1,42 +1,12 @@
 <h1>User Profile</h1>
 
-
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4"><%= user.firstName user.lastName %></h1>
-    <a class="btn btn-primary btn-lg" href="/login" role="button">Or login to your existing account here...</a>
+    <h1 class="display-4"><%= user.firstName %> <%= user.lastName %></h1>
   </div>
 </div>
 
-<div class="weddings">
-  <div class="your-wedding">
-    <h2>Your Wedding</h2>
-    <img src="<%- wedding.imageMain" alt="Your Wedding">
-    <h3><%= wedding.date, wedding.venue %></h3>
-    <a href="weddings/edit"><h4>Edit Your Wedding</h4></a>
-    <a href="weddings/delete"><h4>Delete Your Wedding</h4></a>
-    <a href="weddings/new"><h4>Create Your Wedding</h4></a>
-  </div>
 
 
-  <div class="upcoming-weddings">
-    <h2>Upcoming Weddings</h2>
-      <div class="row">
-        <% user.forEach((rsvp) => { %>
-          <div class="col-lg-4 col-sm-6 col-12">
-          <a href="/weddings/<%= wedding.id %>"><h3><%= wedding.createdBy.user %> & <%= wedding.fiance.user %>s Wedding %></h3></a>
-          <h4><%= wedding.date, wedding.venue %></h4>
-          </div>
-          <% }) %>
-        </div>
-      </div>
-      <form class="rsvp">
-        <label for="rsvp">RSVP to a wedding</label>
-        <input type="text" class="form-control" placeholder="Enter wedding ref" id="rsvp" name="rsvp">
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
-
-
-  <a href="users/edit"><h4>Edit Your Profile</h4></a>
-  <a href="users/delete"><h4>Delete Your Profile</h4></a>
+<a href="users/edit"><h4>Edit Your Profile</h4></a>
+<a href="users/delete"><h4>Delete Your Profile</h4></a>

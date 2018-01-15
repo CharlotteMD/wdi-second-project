@@ -1,11 +1,13 @@
 const User = require('../models/user');
 
 function showRoute(req, res, next) {
+  console.log('hitting');
   User
     .findById(req.params.id)
     .populate('createdBy')
     .exec()
     .then((user) => {
+      console.log('hitting');
       if(!user) return res.notFound();
       return res.render('users/show', { user });
     })
@@ -18,7 +20,7 @@ function editRoute(req, res, next) {
     .exec()
     .then((user) => {
       if(!user) return res.notFound();
-      return res.render('users/edit', { user });
+      return res.render('/users/edit', { user });
     })
     .catch(next);
 }

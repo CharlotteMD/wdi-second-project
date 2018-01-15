@@ -12,7 +12,7 @@ const secureRoute = require('../lib/secureRoute');
 router.get('/', (req, res) => res.render('statics/index'));
 
 // Register as a user
-router.route('/users/new')
+router.route('/register')
   .get(registrations.new)
   .post(registrations.create);
 // should redirect to login page
@@ -28,7 +28,7 @@ router.route('/logout')
 
 // Show user Page
 router.route('/users/:id')
-  .get(users.show)
+  .get(secureRoute, users.show)
   .put(secureRoute, users.update)
   .delete(secureRoute, users.delete);
 

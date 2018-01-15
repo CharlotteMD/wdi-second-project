@@ -2,7 +2,7 @@
   <ul class="nav justify-content-center">
     <li class="nav-item"><a href="/">Guest Book</a></li>
       <% if(!locals.isLoggedIn) { %>
-        <li class="nav-item"><a href="/users/new">Register</a></li>
+        <li class="nav-item"><a href="/register">Register</a></li>
         <li class="nav-item"><a href="/login">Login</a></li>
       <% } else { %>
         <li class="nav-item"><a href="/users/show">`${user.firstName}`</a></li>
