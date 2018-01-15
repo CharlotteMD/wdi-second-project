@@ -4,6 +4,7 @@ const registrations = require('../controllers/registrations');
 const users = require('../controllers/users');
 const weddings = require('../controllers/weddings');
 const questions = require('../controllers/questions');
+const answers = require('../controllers/answers');
 const secureRoute = require('../lib/secureRoute');
 
 
@@ -11,15 +12,14 @@ const secureRoute = require('../lib/secureRoute');
 router.get('/', (req, res) => res.render('statics/index'));
 
 // Register as a user
-router.route('/users/register')
-  .get(secureRoute, users.new);
-  .get(registrations.new);
+router.route('/users/new')
+  .get(registrations.new)
   .post(registrations.create);
-  // should redirect to login page
+// should redirect to login page
 
 // Login
 router.route('/users/login')
-  .get(sessions.new);
+  .get(sessions.new)
   .post(sessions.create);
 
 // Logout
@@ -64,7 +64,7 @@ router.route('/questions/new')
   .get(secureRoute, questions.new);
 
 // New answer
-// Show on wedding page 
+// Show on wedding page
 router.route('/answers/new')
   .get(secureRoute, answers.new);
 

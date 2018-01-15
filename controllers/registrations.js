@@ -1,7 +1,7 @@
 const User = require('../models/user');
 
 function newRoute(req, res) {
-  return res.render('registrations/new');
+  return res.render('users/new');
 }
 
 function createRoute(req, res, next) {
@@ -10,7 +10,7 @@ function createRoute(req, res, next) {
     .then(() => res.redirect('/login'))
     .catch((err) => {
       if(err.name === 'ValidationError') {
-        return res.badRequest('/register', err.toString());
+        return res.badRequest('statics/index', err.toString());
       }
       next(err);
     });
