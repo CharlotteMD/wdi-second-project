@@ -1,0 +1,19 @@
+const mongoose = require('mongoose');
+
+const weddingSchema = new mongoose.Schema({
+  ref: { type: String, required: true, trim: true, unique: true },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  fianceUsername: { type: String, required: true },
+  date: { type: Date },
+  venue: { type: String, required: true },
+  imageMain: { type: String, required: true },
+  guests: [{ type: mongoose.Schema.ObjectId, ref: 'User'}]
+}, {
+  timestamps: true
+});
+
+weddingSchema.methods.belongsTo = function belongsTo(user) {
+  return this.createdBy.id === user.id;
+};
+
+module.exports = mongoose.model('Wedding', weddingSchema);

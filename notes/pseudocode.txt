@@ -1,0 +1,43 @@
+Navbars
+
+Main navbar pre Login
+
+Main navbar post login
+
+Wedding navbar
+
+
+Homepage
+- simple buttons linking to
+  - Register - http://app/register
+  - Login - http://app/login
+
+
+Register
+- whole form links to user db
+- on submit, page redirects user to login - http://app/login
+
+
+Login
+- form compares to user db
+  - if user is found, user is redirected to http://app/:id
+  - if no user is found, flash message is shown
+
+
+Guest Profile
+- h2 is user.name user.surname
+
+- Your Wedding, Congratulations wedding.name & wedding.fiance
+- Button links to wedding.id http://app/wedding/:id
+- Info beneath is wedding.date wedding.venue
+- You can delete wedding - links to http://app/wedding/:id/delete - you are asked to confirm and then you are redirected back to your user profile http://app/user/:id
+- You can also edit the info for your wedding - http://app/wedding/:id/edit
+
+- Upcoming Weddings
+- Button links to all weddings that your user.id is part of the wedding.guest schema of - http://app/wedding/:id
+- Info beneath is wedding.date wedding.venue
+*** - You can unRSVP from a wedding - this would link to a special page where you can only edit yourself as a guest from that wedding - http://app/wedding/:id/edit/:userid
+  - this would remove your user id from the wedding.guest schema and remove the wedding id from your user.rsvp schema
+
+- Create a Wedding
+- button links to http://app/wedding/new

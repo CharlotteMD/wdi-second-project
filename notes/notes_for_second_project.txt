@@ -53,4 +53,10 @@ Wedding profile -
   guest book would be a feed of user image and their comment, including info on how they know the bride and groom
   Only the user who wrote the comment can delete it
 
-Only 4 pages but different users can see different things 
+Only 4 pages but different users can see different things
+
+Dark Slate Grey
+Light Yellow
+Pink
+Pale Green
+Dark Magenta 
