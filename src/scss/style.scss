@@ -3,3 +3,32 @@
 body {
   font-family: 'Helvetica', sans-serif;
 }
+
+.jumbotron {
+  background-image: url('../images/love.png');
+}
+
+h1 {
+  font: $header-font;
+  font-weight: bold;
+  color: $light-color;
+}
+
+h2 {
+  font: $header-font;
+  text-decoration: underline;
+  font-weight: bold;
+  color: $bright-color;
+}
+
+h3 {
+  font: $text-font;
+  text-decoration: underline;
+  font-weight: bold;
+  color: $dark-color;
+}
+
+h4 {
+  font: $text-font;
+  color: $dark-color;
+}
