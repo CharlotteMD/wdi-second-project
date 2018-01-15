@@ -14,6 +14,7 @@
   "author": "Mike Hayden <mickyginger@gmail.com> (https://github.com/mickyginger)",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "bluebird": "^3.4.7",
     "ejs": "^2.5.6",
     "express": "^4.14.1",
