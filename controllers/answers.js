@@ -1,4 +1,5 @@
 const Answer = require('../models/answer');
+const Wedding = require('../models/wedding');
 
 function newAnswerRoute(req, res) {
   return res.render('answers/new');
@@ -67,5 +68,5 @@ module.exports = {
   create: createAnswerRoute,
   edit: editAnswerRoute,
   update: updateAnswerRoute,
-  delete: deleteAnswerRoute,
+  delete: deleteAnswerRoute
 };
