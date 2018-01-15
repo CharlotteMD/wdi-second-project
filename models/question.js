@@ -8,7 +8,7 @@ const answerSchema = new mongoose.Schema({
 
 const questionSchema = new mongoose.Schema({
   question: { type: String },
-  wedding: { type: mongoose.Schema.ObjectId, ref: 'Wedding', required: true },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   answers: [answerSchema]
 }, {
   timestamps: true

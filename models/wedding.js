@@ -7,7 +7,8 @@ const weddingSchema = new mongoose.Schema({
   date: { type: Date },
   venue: { type: String, required: true },
   imageMain: { type: String, required: true },
-  guests: [{ type: mongoose.Schema.ObjectId, ref: 'User'}]
+  guests: [{ type: mongoose.Schema.ObjectId, ref: 'User'}],
+  questions: [{ type: mongoose.Schema.ObjectId, ref: 'Question'}],
 }, {
   timestamps: true
 });
