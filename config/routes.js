@@ -35,7 +35,7 @@ router.route('/users/:id')
 // New Wedding
 // Show on user page
 router.route('/weddings/new')
-  .get(secureRoute, weddings.new);
+  .get(weddings.new);
 
 // Show Wedding page including all questions and comments
 router.route('/weddings/:id')

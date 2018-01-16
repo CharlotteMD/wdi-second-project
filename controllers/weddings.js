@@ -2,6 +2,7 @@ const Wedding = require('../models/wedding');
 const User = require('../models/user');
 
 function newWeddingRoute(req, res) {
+  console.log('in new wedding route');
   return res.render('weddings/new');
 }
 
