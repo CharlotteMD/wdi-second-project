@@ -1,16 +1,16 @@
-<h1>Show Wedding</h1>
 
 <%= wedding %>
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">The Wedding of <%= wedding.partner1 %> &  <%= wedding.partner2 %></h1>
+    <h2><%= wedding.date %>,<%= wedding.venue %></h2>
   </div>
 </div>
 
 <img src="<%= wedding.imageMain %>" alt="The happy couple">
 
-<h2><%= wedding.date %>,<%= wedding.venue %></h2>
+
 
 <a href="/questions/new"><h3>Create a new question</h3></a>
 <a href="/answers/new"><h3>Submit a new answer</h3></a>

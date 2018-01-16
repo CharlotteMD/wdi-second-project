@@ -50,6 +50,7 @@ router.route('/weddings/:id')
 // Only accessible by user
 router.route('/users/:id/edit')
   .get(secureRoute, users.edit);
+// .put(secureRoute, users.update);
 
 // Edit Wedding
 // Only accessible by createdby or fiance

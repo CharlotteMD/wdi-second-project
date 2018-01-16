@@ -20,16 +20,18 @@ function editRoute(req, res, next) {
     .exec()
     .then((user) => {
       if(!user) return res.notFound();
-      return res.render('/users/edit', { user });
+      return res.render('users/edit', { user });
     })
     .catch(next);
 }
 
 function updateRoute(req, res, next) {
+  console.log('hitting update');
   User
     .findById(req.params.id)
     .exec()
     .then((user) => {
+      console.log('hitting update err');
       if(!user) return res.notFound();
 
       user = Object.assign(user, req.body);
