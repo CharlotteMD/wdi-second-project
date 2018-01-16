@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
 const weddingSchema = new mongoose.Schema({
-  ref: { type: String, required: true, trim: true, unique: true },
+  ref: { type: String, required: true, unique: true },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-  fianceUsername: { type: String, required: true },
+  partner1: { type: String, required: true },
+  partner2: { type: String, required: true },
   date: { type: Date },
   venue: { type: String, required: true },
   imageMain: { type: String, required: true },

@@ -1,6 +1,6 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Register Your Wedding</h1>
+    <h1 class="display-4">Create Your Guest Book</h1>
   </div>
 </div>
 
@@ -13,9 +13,12 @@
       <input type="text" class="form-control" placeholder="Unique Reference" id="ref" name="ref">
     </div>
     <div class="col">
-      <label for="fiance">Search our system by email</label>
-      <input type="text" class="form-control" placeholder="Find your fiance by their email" id="fiance" name="fiance">
-      <button type="submit" class="btn btn-primary">Search</button>
+      <label for="partner1" id="partner1">Who is getting married?</label>
+      <input type="text" class="form-control" placeholder="Name" name="partner1">
+    </div>
+    <div class="col">
+      <label for="partner2" id="partner2">To who?</label>
+      <input type="text" class="form-control" placeholder="Name" name="partner2">
     </div>
   </div>
 
@@ -31,16 +34,9 @@
   </div>
 
   <div class="images">
-    <label for="imageMain">Image of you two</label>
-    <input type="text" class="form-control" placeholder="Photo of the happy couple" id="imageMain" name="imageMain">
+    <label for="imageMain">Photo of the happy couple</label>
+    <input type="text" class="form-control" placeholder="Insert link to photo of the couple" id="imageMain" name="imageMain">
   </div>
-
-  <div class="guests">
-    <label for="guests">Search our system by email</label>
-    <input type="text" class="form-control" placeholder="Find your guests by their email" id="guests" name="guests">
-    <button type="submit" class="btn btn-primary">Search</button>
-  </div>
-
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
