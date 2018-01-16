@@ -53,15 +53,12 @@ router.route('/weddings/:id/edit')
 
 // Questions ROutes
 router.route('/questions')
-  .get(questions.index)
+  // .get(questions.index)
   .post(questions.create);
 
-router.route('/questions/new')
-  .get(questions.new);
-
 router.route('/questions/:id')
-  .get(secureRoute, questions.show)
-  .put(secureRoute, questions.update)
+  // .get(secureRoute, questions.show)
+  // .put(secureRoute, questions.update)
   .delete(secureRoute, questions.delete);
 
 // Edit User
