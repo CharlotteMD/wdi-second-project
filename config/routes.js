@@ -34,6 +34,7 @@ router.route('/users/:id')
 
 // New Wedding
 router.route('/weddings')
+  .get(weddings.index)
   .post(weddings.create);
 
 // Show on user page

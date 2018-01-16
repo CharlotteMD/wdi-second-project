@@ -1,6 +1,18 @@
 const Wedding = require('../models/wedding');
 const User = require('../models/user');
 
+function indexWeddingRoute (req, res) {
+  Wedding
+    .find()
+    .exec()
+    .then((weddings) => {
+      res.render('weddings/index', { weddings: weddings });
+    })
+    .catch((err) => {
+      res.status(500).render('error', { err });
+    });
+}
+
 function newWeddingRoute(req, res) {
   console.log('in new wedding route');
   return res.render('weddings/new');
@@ -78,6 +90,7 @@ function deleteWeddingRoute(req, res, next) {
 
 
 module.exports = {
+  index: indexWeddingRoute,
   new: newWeddingRoute,
   create: createWeddingRoute,
   show: showWeddingRoute,
