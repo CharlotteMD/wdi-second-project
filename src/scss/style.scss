@@ -7,8 +7,13 @@ body {
 .jumbotron {
   background-image: url('../images/love.png');
 
-  button {
-
+  .btn {
+    background-color: $bright-color;
+    color: $dark-color;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: $header-font;
+    border: $bright-color 5px;
   }
 }
 
@@ -62,7 +67,15 @@ button {
   color: $bright-color;
   font-weight: bold;
   font-size: 25px;
+  border: $dark-color 5px;
   // how do i get the button in the center?
+
+  button :hover {
+    background-color: $bright-color;
+    color: $dark-color;
+    border: $bright-color 5px;
+    // why isnt this working
+  }
 }
 
 }
