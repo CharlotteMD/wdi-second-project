@@ -1,0 +1,36 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Guest Books</h1>
+  </div>
+</div>
+
+<div class="show-weddings">
+  <div class="row">
+    <% weddings.forEach((wedding) => { %>
+      <div class="col-lg-4 col-sm-6 col-12">
+      <a href="/weddings/<%= `${wedding.id}` %>"><h3>The Wedding of <%= wedding.partner1 %> &  <%= wedding.partner2 %></h3></a>
+      <img src="<%= wedding.imageMain %>" alt="<%= wedding.partner1 %> &  <%= wedding.partner2 %>"
+
+      <form class="form-inline">
+      <label class="sr-only" for="search-guest">Enter Guest Book RSVP code here</label>
+      <input type="text" class="form-control mb-2 mr-sm-2" id="ref" placeholder="RSVP ref" name="ref">
+      <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      </form>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+
+  Under each wedding have text box where you can enter ref - Enter RSVP ref code in box
+  Press submit
+  If code in box is same as code for wedding, your user id is added to wedding schema and you can view the wedding
+  If wrong you get a flash alert and are directed back to show Page
+
+  Show page could also have a search box - search by a partner name
+
+
+  <form class="form-inline">
+  <label class="sr-only" for="search-guest">Enter Guest Book RSVP code here</label>
+  <input type="text" class="form-control mb-2 mr-sm-2" id="ref" placeholder="RSVP ref" name="ref">
+  <button type="submit" class="btn btn-primary mb-2"><a href="/weddings/index">View Guest Books</a></button>
+  </form>

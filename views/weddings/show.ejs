@@ -4,7 +4,11 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">The Wedding of <%= wedding.partner1 %> &  <%= wedding.partner2 %></h1>
+
+    <% if (wedding.guests.indexOf(user.id) !== -1) { %>
     <h2><%= wedding.date %>,<%= wedding.venue %></h2>
+    <% } %>
+    
   </div>
 </div>
 
@@ -23,13 +27,19 @@
 
   <h1>You are a guest at this wedding</h1>
 
+  <a href="/questions/new"><h3>Create a new question</h3></a>
+  <a href="/answers/new"><h3>Submit a new answer</h3></a>
+
+  <a href="/weddings/edit"><h4>Edit this Guest Book</h4></a>
+  <a href="/weddings/delete"><h4>Delete this Guest Book</h4></a>
+
 
 <% } else { %>
 
 
   <h1>You are not a guest at this wedding</h1>
 
-  
+
 <% }%>
 
 
