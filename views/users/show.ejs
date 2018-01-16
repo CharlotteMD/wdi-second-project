@@ -8,10 +8,10 @@
 
 <img src="<%= `${user.image}` %>" alt="User image">
 
+if this user id appears in the guest schema of the wedding, show the wedding here.
+
+
 <a href="<%= `${user.id}` %>/edit"><h4>Edit Your Profile</h4></a>
 <a href="<%= `${user.id}` %>/delete"><h4>Delete Your Profile</h4></a>
 <a href="/weddings/new"><h4>Create a new Guest Book</h4></a>
 <a href="/weddings/index"><h4>View Guest Books</h4></a>
-
-
-Loop through any ref to guest books included in userSchema

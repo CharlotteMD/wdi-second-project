@@ -37,6 +37,11 @@ router.route('/weddings')
   .get(weddings.index)
   .post(weddings.create);
 
+// Show all weddings 
+router.route('/weddings/index')
+  .get(weddings.index)
+  .post(weddings.create);
+
 // Show on user page
 router.route('/weddings/new')
   .get(weddings.new);
