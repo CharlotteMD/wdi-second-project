@@ -7,12 +7,8 @@
 
 <div class="form-standard">
 
-<form class="new-wedding" form method="POST" action="/weddings/new">
+<form class="new-wedding" form method="POST" action="/weddings">
   <div class="form-row">
-    <div class="col">
-      <label for="ref">Unique Reference</label>
-      <input type="text" class="form-control" placeholder="Unique Reference" id="ref" name="ref">
-    </div>
     <div class="col">
       <label for="partner1" id="partner1">Who is getting married?</label>
       <input type="text" class="form-control" placeholder="Name" name="partner1">
@@ -34,9 +30,15 @@
     </div>
   </div>
 
-  <div class="images">
-    <label for="imageMain">Photo of the happy couple</label>
-    <input type="text" class="form-control" placeholder="Insert link to photo of the couple" id="imageMain" name="imageMain">
+  <div class="form-row">
+    <div class="col">
+      <label for="imageMain">Photo of the happy couple</label>
+      <input type="text" class="form-control" placeholder="Insert link to photo of the couple" id="imageMain" name="imageMain">
+    </div>
+    <%# <div class="col">
+      <label for="createrEmail" id="createrEmail">Your email - must match your user email</label>
+      <input type="email" class="form-control" placeholder="Your email" name="createrEmail">
+    </div> %>
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>

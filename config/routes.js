@@ -33,13 +33,16 @@ router.route('/users/:id')
   .delete(secureRoute, users.delete);
 
 // New Wedding
+router.route('/weddings')
+  .post(weddings.create);
+
 // Show on user page
 router.route('/weddings/new')
   .get(weddings.new);
 
 // Show Wedding page including all questions and comments
 router.route('/weddings/:id')
-  .get(weddings.show)
+  .get(secureRoute, weddings.show)
   .put(secureRoute, weddings.update)
   .delete(secureRoute, weddings.delete);
 

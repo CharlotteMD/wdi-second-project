@@ -7,12 +7,13 @@ function newWeddingRoute(req, res) {
 }
 
 function createWeddingRoute(req, res, next) {
-  console.log(req.body);
+  req.body.ref = Math.floor(1000 + Math.random() * 9000);
   req.body.createdBy = req.user;
+
   Wedding
     .create(req.body)
-    .then(() => res.redirect(`weddings/${req.params.id}`))
-    .catch((err) => {
+    .then(wedding => res.redirect(`weddings/${wedding.id}`))
+    .catch(err => {
       if(err.name === 'ValidationError') {
         return res.badRequest('/weddings/new', err.toString());
       }
