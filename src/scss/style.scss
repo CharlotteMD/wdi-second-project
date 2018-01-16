@@ -1,34 +1,68 @@
 @import "variables";
 
 body {
-  font-family: 'Helvetica', sans-serif;
+  font-family: $text-font;
 }
 
 .jumbotron {
   background-image: url('../images/love.png');
+
+  button {
+
+  }
 }
 
 h1 {
-  font: $header-font;
+  font-family: $header-font;
   font-weight: bold;
   color: $light-color;
 }
 
 h2 {
-  font: $header-font;
+  font-family: $header-font;
   text-decoration: underline;
   font-weight: bold;
   color: $bright-color;
 }
 
 h3 {
-  font: $text-font;
+  font-family: $text-font;
   text-decoration: underline;
   font-weight: bold;
   color: $dark-color;
 }
 
 h4 {
-  font: $text-font;
+  font-family: $text-font;
   color: $dark-color;
+}
+
+
+.form-standard {
+  font-family: $text-font;
+  color: black;
+
+.placeholder {
+  color: $bright-color;
+}
+
+.form-row {
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 25px;
+}
+
+.images {
+  padding-bottom: 25px;
+}
+
+button {
+  font-family: $header-font;
+  background-color: $dark-color;
+  color: $bright-color;
+  font-weight: bold;
+  font-size: 25px;
+  // how do i get the button in the center?
+}
+
 }

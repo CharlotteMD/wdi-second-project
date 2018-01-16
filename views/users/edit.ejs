@@ -6,42 +6,46 @@
   </div>
 </div>
 
-<form class="new-user" form method="POST" action="/users/edit">
-  <div class="form-row">
-    <div class="col">
-      <label for="firstName">First name</label>
-      <input type="text" class="form-control" placeholder="First name" id="firstName" name="firstName" value="firstName">
-    </div>
-    <div class="col">
-      <label for="lastName">Last name</label>
-      <input type="text" class="form-control" placeholder="Last name" id="lastName" name="lastName" value="lastName">
-    </div>
-  </div>
+<div class="form-standard">
 
-  <div class="form-row">
-    <div class="col">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" placeholder="Email" id="email" name="email" value="email">
+  <form class="edit-user" form method="POST" action="/users/edit">
+    <div class="form-row">
+      <div class="col">
+        <label for="firstName">First name</label>
+        <input type="text" class="form-control" placeholder="First name" id="firstName" name="firstName" value="firstName">
+      </div>
+      <div class="col">
+        <label for="lastName">Last name</label>
+        <input type="text" class="form-control" placeholder="Last name" id="lastName" name="lastName" value="lastName">
+      </div>
     </div>
-    <div class="col">
-      <label for="password" id="password">Password</label>
-      <input type="password" class="form-control" placeholder="Password" name="password">
+
+    <div class="form-row">
+      <div class="col">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" placeholder="Email" id="email" name="email" value="email">
+      </div>
+      <div class="col">
+        <label for="password" id="password">Password</label>
+        <input type="password" class="form-control" placeholder="Password" name="password">
+      </div>
+      <div class="col">
+        <label for="password">Confirm password</label>
+        <input type="password" class="form-control" placeholder="Confirm Password">
+      </div>
     </div>
-    <div class="col">
-      <label for="password">Confirm password</label>
-      <input type="password" class="form-control" placeholder="Confirm Password">
+
+    <div class="form-row">
+      <label for="image" name="image">Your profile picture</label>
+      <input type="text" class="form-control" placeholder="Include a link to a photo of you" id="image" name="image" value="image">
     </div>
-  </div>
 
-  <div class="images">
-    <label for="image" name="image">Your profile picture</label>
-    <input type="text" class="form-control" placeholder="Include a link to a photo of you" id="image" name="image" value="image">
-  </div>
+    <div class="form-row">
+      <label for="seatPlan" id="seatPlan" name="seatPlan" value="seatPlan">Please provide a little information about yourself so that other guests can get to know you (hobbies, job, interests etc..)</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+    </div>
 
-  <div class="form-group">
-     <label for="seatPlan" id="seatPlan" name="seatPlan" value="seatPlan">Please provide a little information about yourself so that other guests can get to know you (hobbies, job, interests etc..)</label>
-     <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-   </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
