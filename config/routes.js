@@ -51,9 +51,18 @@ router.route('/weddings/:id/guests')
 router.route('/weddings/:id/edit')
   .get(secureRoute, weddings.edit);
 
+// Questions ROutes
+router.route('/questions')
+  .get(questions.index)
+  .post(questions.create);
 
+router.route('/questions/new')
+  .get(questions.new);
 
-
+router.route('/questions/:id')
+  .get(secureRoute, questions.show)
+  .put(secureRoute, questions.update)
+  .delete(secureRoute, questions.delete);
 
 // Edit User
 // Only accessible by user
@@ -68,11 +77,6 @@ router.route('/users/:id/edit')
 // Only accessible by createdby or wedding createdby or fiance
 router.route('/answers/:id/edit')
   .get(secureRoute, answers.edit);
-
-// New question
-// Show on Wedding page
-router.route('/questions/new')
-  .get(secureRoute, questions.new);
 
 // New answer
 // Show on wedding page
