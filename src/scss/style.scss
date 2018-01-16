@@ -4,8 +4,8 @@ body {
   font-family: $text-font;
 }
 
-// .jumbotron {
-//   background-image: url('../images/love.png');
+.jumbotron {
+  background-image: url("../assets/images/love.png");
 
   .btn {
     background-color: $bright-color;
@@ -15,7 +15,7 @@ body {
     font-family: $header-font;
     border: $bright-color 5px;
   }
-// }
+}
 
 h1 {
   font-family: $header-font;

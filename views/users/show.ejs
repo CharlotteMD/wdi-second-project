@@ -8,10 +8,16 @@
 
 <img src="<%= `${user.image}` %>" alt="User image">
 
-if this user id appears in the guest schema of the wedding, show the wedding here.
+
+<form class="form-inline">
+<label class="sr-only" for="search-guest">Enter Guest Book RSVP code here</label>
+<input type="text" class="form-control mb-2 mr-sm-2" id="ref" placeholder="RSVP ref" name="ref">
+<button type="submit" class="btn btn-primary mb-2"><a href="/weddings/index">View Guest Books</a></button>
+</form>
 
 
 <a href="<%= `${user.id}` %>/edit"><h4>Edit Your Profile</h4></a>
 <a href="<%= `${user.id}` %>/delete"><h4>Delete Your Profile</h4></a>
 <a href="/weddings/new"><h4>Create a new Guest Book</h4></a>
-<a href="/weddings/index"><h4>View Guest Books</h4></a>
+
+View a guestbook with your user id as a ref 

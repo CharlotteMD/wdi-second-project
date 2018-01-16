@@ -3,11 +3,14 @@ const User = require('../models/user');
 
 function indexWeddingRoute (req, res) {
   Wedding
-    .find()
+    .find({'ref': req.body.ref})
     .exec()
     .then((weddings) => {
-      res.render('weddings/index', { weddings: weddings });
+      res.render('weddings/${wedding.id}', { weddings: weddings });
     })
+
+  // search ref from user profile page - if ref found, take user to that wedding page and add their user id to wedding guest schema so they can comment on the page
+
     .catch((err) => {
       res.status(500).render('error', { err });
     });
