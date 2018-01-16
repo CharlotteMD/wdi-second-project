@@ -7,6 +7,16 @@ body {
 .jumbotron {
   background-image: url("../assets/images/love.png");
 
+  h1 {
+      font-size: 6.5rem;
+      font-weight: 900;
+      line-height: 1.2;
+      font-family: $header-font;
+      font-weight: bold;
+      color: $background-color;
+
+  }
+
   .btn {
     background-color: $bright-color;
     color: $dark-color;
