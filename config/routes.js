@@ -32,43 +32,42 @@ router.route('/users/:id')
   .put(secureRoute, users.update)
   .delete(secureRoute, users.delete);
 
-// New Wedding
+// Wedding Routes
 router.route('/weddings')
   .get(weddings.index)
   .post(weddings.create);
 
-// Show all weddings 
-router.route('/weddings/index')
-  .get(weddings.index)
-  .post(weddings.create);
-
-// Show on user page
 router.route('/weddings/new')
   .get(weddings.new);
 
-// Show Wedding page including all questions and comments
 router.route('/weddings/:id')
   .get(secureRoute, weddings.show)
   .put(secureRoute, weddings.update)
   .delete(secureRoute, weddings.delete);
 
+router.route('/weddings/:id/guests')
+  .post(weddings.addGuest);
+
+router.route('/weddings/:id/edit')
+  .get(secureRoute, weddings.edit);
+
+
+
+
+
 // Edit User
 // Only accessible by user
 router.route('/users/:id/edit')
   .get(secureRoute, users.edit);
-// .put(secureRoute, users.update);
 
 // Edit Wedding
 // Only accessible by createdby or fiance
-router.route('/weddings/:id/edit')
-  .get(secureRoute, weddings.edit);
+
 
 // Edit Answers
 // Only accessible by createdby or wedding createdby or fiance
 router.route('/answers/:id/edit')
   .get(secureRoute, answers.edit);
-
-
 
 // New question
 // Show on Wedding page

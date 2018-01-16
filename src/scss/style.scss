@@ -2,6 +2,8 @@
 
 body {
   font-family: $text-font;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .jumbotron {
@@ -30,14 +32,15 @@ body {
 h1 {
   font-family: $header-font;
   font-weight: bold;
-  color: $light-color;
+  color: $bright-color;
 }
 
 h2 {
   font-family: $header-font;
   text-decoration: underline;
   font-weight: bold;
-  color: $bright-color;
+  color: $contrast-color;
+  background-color: $background-color;
 }
 
 h3 {
@@ -87,5 +90,10 @@ button {
     // why isnt this working
   }
 }
+
+}
+
+img {
+  max-width: 400px;
 
 }

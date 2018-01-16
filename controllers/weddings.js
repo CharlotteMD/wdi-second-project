@@ -3,10 +3,10 @@ const User = require('../models/user');
 
 function indexWeddingRoute (req, res) {
   Wedding
-    .find({'ref': req.body.ref})
+    .find()
     .exec()
     .then((weddings) => {
-      res.render('weddings/${wedding.id}', { weddings: weddings });
+      res.render('weddings/index', { weddings });
     })
 
   // search ref from user profile page - if ref found, take user to that wedding page and add their user id to wedding guest schema so they can comment on the page
@@ -91,6 +91,30 @@ function deleteWeddingRoute(req, res, next) {
     .catch(next);
 }
 
+function addGuestToWedding(req, res, next) {
+  // get id of current user
+  // get ref of submitted form
+  const currentUserId = req.user.id;
+  const userRef       = req.body.ref;
+
+  Wedding
+    .findById(req.params.id)
+    .then(wedding => {
+      // compare the wedding ref with the userRef
+
+      if (wedding.ref === userRef) {
+        wedding.guests.push(currentUserId);
+        return wedding.save();
+      } else {
+        console.log('incorrect code');
+      }
+    })
+    .then(wedding => {
+      console.log(wedding);
+      res.redirect(`/weddings/${wedding.id}`);
+    });
+}
+
 
 module.exports = {
   index: indexWeddingRoute,
@@ -99,5 +123,6 @@ module.exports = {
   show: showWeddingRoute,
   edit: editWeddingRoute,
   update: updateWeddingRoute,
-  delete: deleteWeddingRoute
+  delete: deleteWeddingRoute,
+  addGuest: addGuestToWedding
 };

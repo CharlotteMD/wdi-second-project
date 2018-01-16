@@ -38,10 +38,10 @@ function updateRoute(req, res, next) {
 
       return user.save();
     })
-    .then(() => res.redirect(`/users/${req.params.id}`))
+    .then(() => res.redirect(`/users/${req.id}`))
     .catch((err) => {
       if(err.name === 'ValidationError') {
-        return res.badRequest(`/users/${req.params.id}/edit`, err.toString());
+        return res.badRequest(`/users/${req.id}/edit`, err.toString());
       }
       next(err);
     });
