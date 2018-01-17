@@ -66,7 +66,7 @@ h2 {
 }
 
 h3 {
-  font-family: $text-font;
+  font-family: $header-font;
   text-decoration: underline;
   font-weight: bold;
   color: $dark-color;
@@ -115,23 +115,6 @@ h4 {
 
 }
 
-
-.show-weddings {
-
-
-  .eachWedding {
-    border: solid 5px $contrast-color;
-    text-align: center;
-
-
-  }
-
-  img {
-    max-width: 95%;
-    border-radius: 20%;
-  }
-}
-
 .slick-answers {
     background-image: url("../assets/images/hearts.png");
     background-size: 50%;
@@ -146,4 +129,26 @@ h4 {
       font-size: 25px;
       border: $dark-color 5px;
     }
+}
+
+.index-hearts {
+  background-image: url("../assets/images/hearts.png");
+
+  .show-weddings {
+
+    .eachWedding {
+      max-width: 30%;
+      border: solid 5px $background-color;
+      text-align: center;
+      background-color: $bright-color;
+      margin: 5px;
+      padding: 15px;
+
+    }
+
+    img {
+      max-width: 80%;
+      border-radius: 20%;
+    }
+  }
 }
