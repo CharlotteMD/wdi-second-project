@@ -43,7 +43,8 @@ router.route('/weddings/new')
 router.route('/weddings/:id')
   .get(secureRoute, weddings.show)
   .put(secureRoute, weddings.update)
-  .delete(secureRoute, weddings.delete);
+  .delete(secureRoute, weddings.delete)
+  .post(questions.create);
 
 router.route('/weddings/:id/guests')
   .post(weddings.addGuest);
@@ -68,6 +69,7 @@ router.route('/users/:id/edit')
 
 // Edit Wedding
 // Only accessible by createdby or fiance
+
 
 
 // Edit Answers

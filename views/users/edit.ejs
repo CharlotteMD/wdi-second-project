@@ -6,7 +6,8 @@
 
 <div class="form-standard">
 
-  <form class="edit-user" form method="POST" action="/users/edit">
+  <form class="edit-user" form method="POST" action="/users/<%= user.id %>">
+    <input type="hidden" name="_method" value="PUT">
     <div class="form-row">
       <div class="col">
         <label for="firstName">First name</label>

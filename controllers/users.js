@@ -26,22 +26,25 @@ function editRoute(req, res, next) {
 }
 
 function updateRoute(req, res, next) {
-  console.log('hitting update');
+  if(req.body.password.length === 0) {
+    delete req.body.password;
+    delete req.body.passwordConfirmation;
+  }
   User
     .findById(req.params.id)
     .exec()
     .then((user) => {
-      console.log('hitting update err');
       if(!user) return res.notFound();
+      console.log('hitting update err');
 
       user = Object.assign(user, req.body);
 
       return user.save();
     })
-    .then(() => res.redirect(`/users/${req.id}`))
+    .then((user) => res.redirect(`/users/${user._id}`))
     .catch((err) => {
       if(err.name === 'ValidationError') {
-        return res.badRequest(`/users/${req.id}/edit`, err.toString());
+        res.badRequest(`/users/${req.params.id}/edit`, err.toString());
       }
       next(err);
     });
