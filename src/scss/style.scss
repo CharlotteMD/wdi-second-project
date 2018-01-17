@@ -81,6 +81,26 @@ h3 {
   color: $dark-color;
 }
 
+h4 {
+  font-family: $text-font;
+  color: $dark-color;
+}
+
+p {
+  color: $bright-color;
+  font-weight: bold;
+  text-align: center;
+  font-family: $header-font;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+a {
+  color: $bright-color;
+  font-weight: bold;
+  background-color: none;
+}
+
 // Homepage styling
 
 .instructions {
@@ -106,12 +126,6 @@ h3 {
   li {
     font-family: $text-font;
     color: $dark-color;
-
-    a {
-      color: $bright-color;
-      font-weight: bold;
-      background-color: none;
-    }
   }
 
   p {
@@ -129,8 +143,8 @@ h3 {
 .login {
   // justify-content: center;
 
-    img {
-      max-width: 90%;
+  img {
+    max-width: 90%;
   }
 
   .form-standard {
@@ -141,27 +155,43 @@ h3 {
 // User profile page
 
 .user-profile {
+
   img {
     max-width: 90%;
     margin: 20px;
     border: solid 10px $background-color;
+  }
+  h4, button {
+    background: $light-color;
+    border: solid $bright-color 10px;
+    padding: 25px;
+    margin: 10px;
+    text-align: center;
+  }
+
+  button {
+    font-family: $text-font;
+    color: $dark-color;
+    font-size: 1.5rem;
+  }
+
 }
+
+.user-instructions {
+  h2, h3 {
+  text-align: center;
+}
+  h3 {
+    text-decoration: none;
+  }
+
+  p {
+    text-align: left;
+  }
 }
 
 
 
-
-h3 {
-  font-family: $header-font;
-  text-decoration: underline;
-  font-weight: bold;
-  color: $dark-color;
-}
-
-h4 {
-  font-family: $text-font;
-  color: $dark-color;
-}
 
 
 .form-standard {

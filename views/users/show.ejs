@@ -11,16 +11,32 @@
     <div class="col-lg-6 col-sm-6 col-12">
       <img src="<%= `${user.image}` %>" alt="User image">
     </div>
-
-    <div class="col-lg-6 col-sm-6 col-12">
-      <a href="<%= user.id %>/edit"><h4>Edit Your Profile</h4></a>
-      <form action="/users/<%= user._id %>" method="POST">
-        <input type="hidden" name="_method" value="DELETE"/>
-        <button>Delete Your Profile</button>
-        <small>This will also delete any Guest Book that you created.</small>
-      </form>
-      <a href="/weddings/new"><h4>Create a new Guest Book</h4></a>
-      <a href="/weddings"><h4>View Guest Books</h4></a>
+    <div class="userShow">
+      <div class=" col-lg-3 col-sm-3 col-12">
+        <a href="<%= user.id %>/edit"><h4>Edit Your Profile</h4></a>
+        <form action="/users/<%= user._id %>" method="POST">
+          <input type="hidden" name="_method" value="DELETE"/>
+          <button>Delete Your Profile</button>
+          <%# <small>This will also delete any Guest Book that you created.</small> %>
+        </form>
+        <div class=" col-lg-3 col-sm-3 col-12">
+          <a href="/weddings/new"><h4>Create a new Guest Book</h4></a>
+          <a href="/weddings"><h4>View Guest Books</h4></a>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
+  <div class="user-instructions">
+    <h2>Welcome to your user profile, <%= user.firstName %></h2>
+    <h3>Get your guests excited about your wedding by sharing stories about the happy couple</h3>
+    <p>From here you can:</p>
+    <ol>
+      <li><a href="<%= user.id %>/edit">Edit your profile,</a> including updating your email address and password.</li>
+      <li>Delete your profile - be careful if you do this because it will also delete any guest books that you created!</li>
+      <li><a href="/weddings/new">Create a new Guest Book,</a> or <a href="/weddings">search for an existing one.</a></li>
+    </ol>
+    <p>Easy as that!</p>
+  </div>
+
+  <a href="#"></a>
