@@ -2,45 +2,31 @@
 
 // Navbar styling
 .brand {
-    max-width: 5%;
-  }
+  max-width: 5%;
+}
 
 
-.navbar, a {
+.navbar {
   background-color: $light-color;
-  font-family: $header-font;
-  font-weight: bold;
-  color: $background-color;
-  font-size: 30px;
-  padding-left: 30px;
 
-  ul {
-    display: flex;
+  a {
+    font-family: $header-font;
+    font-weight: bold;
+    color: $background-color;
+    font-size: 30px;
+    padding-left: 30px;
+
+    ul {
+      display: flex;
 
 
-    li {
-      justify-content: space-around;
+      li {
+        justify-content: space-around;
 
+      }
     }
   }
 }
-
-body {
-  font-family: $text-font;
-  justify-content: center;
-  margin: 0 auto;
-  // max-width: 1000px;
-}
-
-.instructions {
-  margin: 20px;
-
-  img {
-    max-width: 90%;
-  }
-}
-
-
 
 .jumbotron {
   background-image: url("../assets/images/jumbolove.png");
@@ -65,6 +51,16 @@ body {
   }
 }
 
+
+// Generic styling
+
+body {
+  font-family: $text-font;
+  justify-content: center;
+  margin: 0 auto;
+  // max-width: 1000px;
+}
+
 h1 {
   font-family: $header-font;
   font-weight: bold;
@@ -73,11 +69,67 @@ h1 {
 
 h2 {
   font-family: $header-font;
-  text-decoration: underline;
   font-weight: bold;
   color: $contrast-color;
-  // background-color: $background-color;
+  text-decoration: underline;
 }
+
+h3 {
+  font-family: $header-font;
+  text-decoration: underline;
+  font-weight: bold;
+  color: $dark-color;
+}
+
+// Homepage styling
+
+.instructions {
+  margin: 20px;
+
+
+  img {
+    max-width: 90%;
+  }
+
+  h2 {
+    font-size: 75px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  h3 {
+    text-decoration: none;
+    text-align: center;
+    color: $light-color;
+  }
+
+  li {
+    font-family: $text-font;
+    color: $dark-color;
+
+    a {
+      color: $bright-color;
+      font-weight: bold;
+      background-color: none;
+    }
+  }
+
+  p {
+    color: $bright-color;
+    font-weight: bold;
+    text-align: center;
+    font-family: $header-font;
+    font-size: 30px;
+    text-decoration: underline;
+  }
+}
+
+
+
+
+
+
+
 
 h3 {
   font-family: $header-font;
