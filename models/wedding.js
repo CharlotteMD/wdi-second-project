@@ -1,5 +1,29 @@
 const mongoose = require('mongoose');
 
+const answerSchema = new mongoose.Schema({
+  answer: { type: String },
+  question: { type: mongoose.Schema.ObjectId, ref: 'Question', required: true },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+}, {
+  timestamps: true
+});
+
+answerSchema.methods.belongsTo = function answerBelongsTo(user) {
+  return this.createdBy.id === user.id;
+};
+
+const questionSchema = new mongoose.Schema({
+  content: { type: String },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  answers: [ answerSchema ]
+}, {
+  timestamps: true
+});
+
+questionSchema.methods.belongsTo = function questionBelongsTo(user) {
+  return this.createdBy.id === user.id;
+};
+
 const weddingSchema = new mongoose.Schema({
   ref: { type: String, required: true, unique: true },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
@@ -10,12 +34,12 @@ const weddingSchema = new mongoose.Schema({
   imageMain: { type: String, required: true },
   // createrEmail: { type: String, required: true },
   guests: [{ type: mongoose.Schema.ObjectId, ref: 'User'}],
-  questions: [{ type: mongoose.Schema.ObjectId, ref: 'Question'}]
+  questions: [ questionSchema ]
 }, {
   timestamps: true
 });
 
-weddingSchema.methods.belongsTo = function belongsTo(user) {
+weddingSchema.methods.belongsTo = function weddingBelongsTo(user) {
   return this.createdBy.id === user.id;
 };
 

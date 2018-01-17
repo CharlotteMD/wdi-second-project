@@ -1,5 +1,4 @@
-const Answer = require('../models/answer');
-// const Wedding = require('../models/wedding');
+const Wedding = require('../models/wedding');
 
 function newAnswerRoute(req, res) {
   return res.render('answers/new');

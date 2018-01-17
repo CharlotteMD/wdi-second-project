@@ -51,6 +51,8 @@ function updateRoute(req, res, next) {
 }
 
 function deleteRoute(req, res, next) {
+// also need to add deleting any wedding book created by that user 
+
   User
     .findById(req.params.id)
     .exec()

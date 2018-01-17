@@ -1,4 +1,3 @@
-const Question = require('../models/question');
 const Wedding = require('../models/wedding');
 
 
@@ -8,29 +7,18 @@ function createQuestionRoute(req, res, next) {
   // take user id of person logged in
   // take id of wedding from url
   // push question submitted on form to questions in weddings schema
-  const currentUserId = req.user.id;
-  const newQuestion   = req.body.question;
-  const weddingId     = req.params.id;
-
-  Question
-    .find()
-    .then(question => {
-      Question.questions.push(newQuestion);
-      Question.createdby.push(currentUserId);
-      return Question.save();
-    });
-
-  console.log(req.body);
   req.body.createdBy = req.user;
-  Question
-    .create(req.body)
-    .then(() => res.redirect(`/wedding/${req.params.id}`))
-    .catch((err) => {
-      if(err.name === 'ValidationError') {
-        return res.badRequest('/questions/new', err.toString());
-      }
-      next(err);
-    });
+
+  Wedding
+    .findById(req.params.id)
+    .then(wedding => {
+      if(!wedding) return res.notFound();
+
+      wedding.questions.push(req.body);
+      return wedding.save();
+    })
+    .then((wedding) => res.redirect(`/weddings/${wedding.id}`))
+    .catch(next);
 }
 
 function deleteQuestionRoute(req, res, next) {

@@ -53,14 +53,24 @@ router.route('/weddings/:id/edit')
   .get(secureRoute, weddings.edit);
 
 // Questions ROutes
-router.route('/questions')
+router.route('/weddings/:id/questions')
   // .get(questions.index)
   .post(questions.create);
 
-router.route('/questions/:id')
+router.route('/weddings/:id/questions/:questionId')
   // .get(secureRoute, questions.show)
   // .put(secureRoute, questions.update)
   .delete(secureRoute, questions.delete);
+
+// Questions ROutes
+// router.route('/weddings/:id/questions/:questionId/answers')
+//   // .get(questions.index)
+//   .post(answers.create);
+
+// router.route('/weddings/:id/questions/:questionId/answers/:answerId')
+//   // .get(secureRoute, questions.show)
+//   // .put(secureRoute, questions.update)
+//   .delete(secureRoute, answers.delete);
 
 // Edit User
 // Only accessible by user
