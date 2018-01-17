@@ -1,14 +1,14 @@
 @import "variables";
 
 .navbar, a {
-  background-color: $background-color;
+  background-color: $bright-color;
   font-family: $header-font;
   font-weight: bold;
   color: $dark-color;
   font-size: 30px;
 
   a {
-    color: $bright-color;
+    color: $light-color;
   }
 
   ul {
@@ -29,7 +29,7 @@ body {
 }
 
 .jumbotron {
-  background-image: url("../assets/images/love.png");
+  background-image: url("../assets/images/jumbolove.png");
 
   h1 {
     font-size: 6.5rem;
@@ -62,7 +62,7 @@ h2 {
   text-decoration: underline;
   font-weight: bold;
   color: $contrast-color;
-  background-color: $background-color;
+  // background-color: $background-color;
 }
 
 h3 {
@@ -123,10 +123,27 @@ h4 {
     border: solid 5px $contrast-color;
     text-align: center;
 
+
   }
 
   img {
     max-width: 95%;
     border-radius: 20%;
   }
+}
+
+.slick-answers {
+    background-image: url("../assets/images/hearts.png");
+    background-size: 50%;
+    padding: 50px;
+    margin: 20px;
+
+    .slick-prev {
+      font-family: $header-font;
+      background-color: $dark-color;
+      color: $bright-color;
+      font-weight: bold;
+      font-size: 25px;
+      border: $dark-color 5px;
+    }
 }
