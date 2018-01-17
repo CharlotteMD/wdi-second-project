@@ -58,7 +58,7 @@ function deleteRoute(req, res, next) {
       if(!user) return res.notFound();
       return user.remove();
     })
-    .then(() => res.redirect('/'))
+    .then(() => res.redirect('/index'))
     .catch(next);
 }
 

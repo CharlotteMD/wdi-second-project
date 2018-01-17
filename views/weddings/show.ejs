@@ -37,8 +37,12 @@
   </div>
   <a href="/answers/new"><h3>Submit a new answer</h3></a>
 
-  <a href="/weddings/<%= wedding._id %>/edit"><h4>Edit this Guest Book</h4></a>
-  <a href="/weddings/delete"><h4>Delete this Guest Book</h4></a>
+  <a href="/weddings/edit"><h4>Edit this Guest Book</h4></a>
+
+  <form action="/weddings/<%= wedding._id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <button>Delete this Guest Book</button>
+  </form>
 
 
 <% } else { %>
@@ -54,9 +58,3 @@
 <h3>The RSVP code for this Wedding is: <%= wedding.ref %></h3>
 
 <% } %>
-
-<%# <a href="/questions/new"><h3>Create a new question</h3></a>
-<a href="/answers/new"><h3>Submit a new answer</h3></a>
-
-<a href="/weddings/edit"><h4>Edit this Guest Book</h4></a>
-<a href="/weddings/delete"><h4>Delete this Guest Book</h4></a> %>
