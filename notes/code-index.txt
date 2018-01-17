@@ -3,6 +3,20 @@
 <button type="submit" class="btn btn-primary mb-2">Submit</button>
 </form>
 
+<div class="main-navbar">
+  <ul class="nav justify-content-center">
+    <li class="nav-item"><a href=""></a></li>
+      <% if(!locals.isLoggedIn) { %>
+        <li class="nav-item"><a href="/register">Register</a></li>
+        <li class="nav-item"><a href="/login">Login</a></li>
+      <% } else { %>
+        <li class="nav-item"><a href="/users/<%= locals.user.id %>"><%= `${user.firstName}` %></a></li>
+        <li class="nav-item"><a href="/weddings">Guest Books</a>
+        <li class="nav-item"><a href="/logout">Logout</a></li>
+      <% } %>
+    </ul>
+  </div>
+</div>
 
 
 function rsvpDelete (req, res) {

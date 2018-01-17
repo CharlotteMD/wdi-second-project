@@ -6,10 +6,12 @@
 
 <div class="show-weddings container">
   <div class="row">
+    <div class="col-lg-4 col-sm-6 col-12">
     <% weddings.forEach((wedding) => { %>
-      <div class="col-lg-4 col-sm-6 col-12">
+      <div class="eachWedding"
         <a href="/weddings/<%= `${wedding.id}` %>"><h3>The Wedding of <%= wedding.partner1 %> &  <%= wedding.partner2 %></h3></a>
         <img src="<%= wedding.imageMain %>" alt="<%= wedding.partner1 %> &  <%= wedding.partner2 %>"
+      </div>
       </div>
       <% }) %>
     </div>

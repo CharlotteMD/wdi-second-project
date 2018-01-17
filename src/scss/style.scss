@@ -1,5 +1,27 @@
 @import "variables";
 
+.navbar, a {
+  background-color: $background-color;
+  font-family: $header-font;
+  font-weight: bold;
+  color: $dark-color;
+  font-size: 30px;
+
+  a {
+    color: $bright-color;
+  }
+
+  ul {
+    display: flex;
+
+
+    li {
+      justify-content: space-around;
+
+    }
+  }
+}
+
 body {
   font-family: $text-font;
   justify-content: center;
@@ -10,12 +32,12 @@ body {
   background-image: url("../assets/images/love.png");
 
   h1 {
-      font-size: 6.5rem;
-      font-weight: 900;
-      line-height: 1.2;
-      font-family: $header-font;
-      font-weight: bold;
-      color: $background-color;
+    font-size: 6.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    font-family: $header-font;
+    font-weight: bold;
+    color: $background-color;
 
   }
 
@@ -60,40 +82,51 @@ h4 {
   font-family: $text-font;
   color: black;
 
-.placeholder {
-  color: $bright-color;
-}
-
-.form-row {
-  padding-right: 5px;
-  padding-left: 5px;
-  padding-bottom: 25px;
-}
-
-.images {
-  padding-bottom: 25px;
-}
-
-button {
-  font-family: $header-font;
-  background-color: $dark-color;
-  color: $bright-color;
-  font-weight: bold;
-  font-size: 25px;
-  border: $dark-color 5px;
-  // how do i get the button in the center?
-
-  button :hover {
-    background-color: $bright-color;
-    color: $dark-color;
-    border: $bright-color 5px;
-    // why isnt this working
+  .placeholder {
+    color: $bright-color;
   }
-}
+
+  .form-row {
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 25px;
+  }
+
+  .images {
+    padding-bottom: 25px;
+  }
+
+  button {
+    font-family: $header-font;
+    background-color: $dark-color;
+    color: $bright-color;
+    font-weight: bold;
+    font-size: 25px;
+    border: $dark-color 5px;
+    // how do i get the button in the center?
+
+    button :hover {
+      background-color: $bright-color;
+      color: $dark-color;
+      border: $bright-color 5px;
+      // why isnt this working
+    }
+  }
 
 }
 
-img {
-  max-width: 400px;
 
+.show-weddings {
+
+
+  .eachWedding {
+    border: solid 5px $contrast-color;
+    text-align: center;
+
+  }
+
+  img {
+    max-width: 95%;
+    border-radius: 20%;
+  }
 }

@@ -1,35 +1,29 @@
-<h1>User Profile</h1>
-
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4"><%= user.firstName %> <%= user.lastName %></h1>
   </div>
 </div>
 
+
+
 <div class="container">
   <div class="row">
     <div class="col-sm">
-
+<img src="<%= `${user.image}` %>" alt="User image">
     </div>
-    <div class="col-sm">
 
-    </div>
-    <div class="col-sm">
+      <div class="col-sm">
+<a href="<%= user.id %>/edit"><h4>Edit Your Profile</h4></a>
 
+      <form action="/users/<%= user._id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE"/>
+        <button>Delete Your Profile</button>
+        <small>This will also delete any Guest Book that you created.</small>
+      </form>
+
+<a href="/weddings/new"><h4>Create a new Guest Book</h4></a>
+
+<a href="/weddings"><h4>View Guest Books</h4></a>
     </div>
   </div>
 </div>
-
-<img src="<%= `${user.image}` %>" alt="User image">
-
-
-<a href="<%= user.id %>/edit"><h4>Edit Your Profile</h4></a>
-
-<form action="/users/<%= user._id %>" method="POST">
-  <input type="hidden" name="_method" value="DELETE"/>
-  <button>Delete Your Profile</button>
-  <small>This will also delete any Guest Book that you created.</small>
-</form>
-
-<a href="/weddings/new"><h4>Create a new Guest Book</h4></a>
-<a href="/weddings"><h4>View Guest Books</h4></a>

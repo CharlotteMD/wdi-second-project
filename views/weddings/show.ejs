@@ -35,7 +35,7 @@
     </form>
 
     </div>
-    <a href="/weddings/<%= wedding._id %>/answers/new"><h3>Submit a new answer</h3></a>
+
 
     <a href="/weddings/edit"><h4>Edit this Guest Book</h4></a>
 
@@ -50,27 +50,27 @@
       <h3><%= question.content %></h3>
       <% question.answers.forEach((answer) => { %>
         <h4><%= answer.comment %></h4>
-      <% }) %>
-      <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/questions/<%= question.id %>/answers">
-      <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Write your comment here" name="comment">
-      <button type="submit" class="btn btn-primary mb-2">Submit</button>
-      </form>
-      <% }) %>
-    </div>
-  </div>
+        <% }) %>
+        <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/questions/<%= question.id %>/answers">
+        <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Write your comment here" name="comment">
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        </form>
+        <% }) %>
+        </div>
+        </div>
 
 
 
-      <% } else { %>
+        <% } else { %>
 
 
-        <h1>You are not a guest at this wedding</h1>
+          <h1>You are not a guest at this wedding</h1>
 
 
-        <% }%>
+          <% }%>
 
-        <% if (wedding.createdBy === (user.id)) { %>
+          <% if (wedding.createdBy === (user.id)) { %>
 
-          <h3>The RSVP code for this Wedding is: <%= wedding.ref %></h3>
+            <h3>The RSVP code for this Wedding is: <%= wedding.ref %></h3>
 
-          <% } %>
+            <% } %>
