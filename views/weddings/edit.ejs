@@ -4,41 +4,37 @@
   </div>
 </div>
 
+<h3>Your RSVP code is: <%= wedding.ref %></h3>
+
 <div class="form-standard">
 
-  <form class="edit-wedding" form method="POST" action="/weddings/edit">
+  <form class="edit-wedding" form method="POST" action="/weddings/<%= wedding.id %>">
+    <input type="hidden" name="_method" value="PUT">
     <div class="form-row">
       <div class="col">
-        <label for="ref">Unique Reference</label>
-        <input type="text" class="form-control" placeholder="Unique Reference" id="ref" name="ref" value="ref">
+        <label for="partner1">Your Name</label>
+        <input type="text" class="form-control" placeholder="Your name" id="partner1" name="partner1" value="<%= wedding.partner1 %>">
       </div>
       <div class="col">
-        <label for="fiance">Search our system by email</label>
-        <input type="text" class="form-control" placeholder="Find your fiance by their email" id="fiance" name="fiance" value="fiance">
-        <button type="submit" class="btn btn-primary">Search</button>
+        <label for="partner2">Your fiances name</label>
+        <input type="text" class="form-control" placeholder="Your fiances name" id="partner2" name="partner2" value="<%= wedding.partner2 %>">
       </div>
     </div>
 
     <div class="form-row">
       <div class="col">
         <label for="date">Date</label>
-        <input type="date" class="form-control" placeholder="Date" id="date" name="date" value="date">
+        <input type="date" class="form-control" placeholder="Date" id="date" name="date" value="<%= wedding.date %>">
       </div>
       <div class="col">
         <label for="venue" id="venue">Venue</label>
-        <input type="text" class="form-control" placeholder="Venue" name="venue" value="venue">
+        <input type="text" class="form-control" placeholder="Venue" name="venue" value="<%= wedding.venue %>">
       </div>
     </div>
 
     <div class="images">
       <label for="imageMain">Image of you two</label>
-      <input type="text" class="form-control" placeholder="Photo of the happy couple" id="imageMain" name="imageMain" value="imageMain">
-    </div>
-
-    <div class="guests">
-      <label for="guests">Search our system by email</label>
-      <input type="text" class="form-control" placeholder="Find your guests by their email" id="guests" name="guests" value="guests">
-      <button type="submit" class="btn btn-primary">Search</button>
+      <input type="text" class="form-control" placeholder="Photo of the happy couple" id="imageMain" name="imageMain" value="<%= wedding.imageMain %>">
     </div>
 
 
