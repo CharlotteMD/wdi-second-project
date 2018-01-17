@@ -1,15 +1,18 @@
 @import "variables";
 
+// Navbar styling
+.brand {
+    max-width: 5%;
+  }
+
+
 .navbar, a {
-  background-color: $bright-color;
+  background-color: $light-color;
   font-family: $header-font;
   font-weight: bold;
-  color: $dark-color;
+  color: $background-color;
   font-size: 30px;
-
-  a {
-    color: $light-color;
-  }
+  padding-left: 30px;
 
   ul {
     display: flex;
@@ -26,7 +29,18 @@ body {
   font-family: $text-font;
   justify-content: center;
   margin: 0 auto;
+  // max-width: 1000px;
 }
+
+.instructions {
+  margin: 20px;
+
+  img {
+    max-width: 90%;
+  }
+}
+
+
 
 .jumbotron {
   background-image: url("../assets/images/jumbolove.png");
@@ -116,27 +130,29 @@ h4 {
 }
 
 .slick-answers {
-    background-image: url("../assets/images/hearts.png");
-    background-size: 50%;
-    padding: 50px;
-    margin: 20px;
+  background-image: url("../assets/images/hearts.png");
+  background-size: 50%;
+  padding: 50px;
+  margin: 20px;
 
-    .slick-prev {
-      font-family: $header-font;
-      background-color: $dark-color;
-      color: $bright-color;
-      font-weight: bold;
-      font-size: 25px;
-      border: $dark-color 5px;
-    }
+  .slick-prev {
+    font-family: $header-font;
+    background-color: $dark-color;
+    color: $bright-color;
+    font-weight: bold;
+    font-size: 25px;
+    border: $dark-color 5px;
+  }
 }
 
 .index-hearts {
   background-image: url("../assets/images/hearts.png");
 
   .show-weddings {
+    display: flex;
 
     .eachWedding {
+      justify-content: space-around;
       max-width: 30%;
       border: solid 5px $background-color;
       text-align: center;
