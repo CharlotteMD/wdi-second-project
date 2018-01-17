@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const answerSchema = new mongoose.Schema({
-  answer: { type: String },
+  comment: { type: String },
   question: { type: mongoose.Schema.ObjectId, ref: 'Question', required: true },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 }, {

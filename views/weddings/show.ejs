@@ -3,62 +3,74 @@
     <h1 class="display-4">The Wedding of <%= wedding.partner1 %> &  <%= wedding.partner2 %></h1>
 
     <% if (wedding.guests.indexOf(user.id) !== -1) { %>
-    <h2><%= wedding.date %>,<%= wedding.venue %></h2>
-    <% } %>
+      <h2><%= wedding.date %>,<%= wedding.venue %></h2>
+      <% } %>
 
+    </div>
   </div>
-</div>
 
-<img src="<%= wedding.imageMain %>" alt="The happy couple">
+  <img src="<%= wedding.imageMain %>" alt="The happy couple">
 
-<p><%= wedding.ref %></p>
+  <p><%= wedding.ref %></p>
 
-<form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/guests">
-  <label class="sr-only" for="search-guest">Enter Guest Book RSVP code here</label>
-  <input type="text" class="form-control mb-2 mr-sm-2" id="ref" placeholder="RSVP ref" name="ref">
-  <button type="submit" class="btn btn-primary mb-2">Submit</button>
-</form>
+  <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/guests">
+    <label class="sr-only" for="search-guest">Enter Guest Book RSVP code here</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="ref" placeholder="RSVP ref" name="ref">
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+  </form>
 
-<% if (wedding.guests.indexOf(user.id) !== -1) { %>
+  <% if (wedding.guests.indexOf(user.id) !== -1) { %>
 
 
-  <h1>You are a guest at this wedding</h1>
+    <h1>You are a guest at this wedding</h1>
 
-  <div class="form-standard">
+    <div class="form-standard">
 
-  <form class="new-question" form method="POST" action="<%= wedding._id %>/questions">
+    <form class="new-question" form method="POST" action="<%= wedding._id %>/questions">
     <div class="form-group">
-      <label for="questions">What is your question for the guest book?</label>
-      <textarea class="form-control" id="questions-new" rows="3" placeholder="Write your question for the guest book" name="content"></textarea>
+    <label for="questions">What is your question for the guest book?</label>
+    <textarea class="form-control" id="questions-new" rows="3" placeholder="Write your question for the guest book" name="content"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+    </form>
 
-  </div>
-  <a href="/answers/new"><h3>Submit a new answer</h3></a>
+    </div>
+    <a href="/weddings/<%= wedding._id %>/answers/new"><h3>Submit a new answer</h3></a>
 
-  <a href="/weddings/edit"><h4>Edit this Guest Book</h4></a>
+    <a href="/weddings/edit"><h4>Edit this Guest Book</h4></a>
 
-  <form action="/weddings/<%= wedding._id %>" method="POST">
+    <form action="/weddings/<%= wedding._id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE"/>
     <button>Delete this Guest Book</button>
-  </form>
+    </form>
+
+    <div class="index-questions">
+    <div class="row">
+    <% wedding.questions.forEach((question) => { %>
+      <h3><%= question.content %></h3>
+      <% question.answers.forEach((answer) => { %>
+        <h4><%= answer.comment %></h4>
+      <% }) %>
+      <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/questions/<%= question.id %>/answers">
+      <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Write your comment here" name="comment">
+      <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      </form>
+      <% }) %>
+    </div>
+  </div>
 
 
-  <%= wedding.questions %>
+
+      <% } else { %>
 
 
-
-<% } else { %>
-
-
-  <h1>You are not a guest at this wedding</h1>
+        <h1>You are not a guest at this wedding</h1>
 
 
-<% }%>
+        <% }%>
 
-<% if (wedding.createdBy === (user.id)) { %>
+        <% if (wedding.createdBy === (user.id)) { %>
 
-<h3>The RSVP code for this Wedding is: <%= wedding.ref %></h3>
+          <h3>The RSVP code for this Wedding is: <%= wedding.ref %></h3>
 
-<% } %>
+          <% } %>

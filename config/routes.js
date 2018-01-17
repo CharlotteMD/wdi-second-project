@@ -62,15 +62,16 @@ router.route('/weddings/:id/questions/:questionId')
   // .put(secureRoute, questions.update)
   .delete(secureRoute, questions.delete);
 
-// Questions ROutes
+// Answers Routes
+router.route('/weddings/:id/questions/:questionId/answers')
 // router.route('/weddings/:id/questions/:questionId/answers')
-//   // .get(questions.index)
-//   .post(answers.create);
+  // .get(questions.index)
+  .post(answers.create);
 
-// router.route('/weddings/:id/questions/:questionId/answers/:answerId')
+// router.route('/weddings/:id/')
 //   // .get(secureRoute, questions.show)
-//   // .put(secureRoute, questions.update)
-//   .delete(secureRoute, answers.delete);
+//   .put(secureRoute, questions.update)
+//   // .delete(secureRoute, answers.delete);
 
 // Edit User
 // Only accessible by user
@@ -87,10 +88,6 @@ router.route('/users/:id/edit')
 router.route('/answers/:id/edit')
   .get(secureRoute, answers.edit);
 
-// New answer
-// Show on wedding page
-router.route('/answers/new')
-  .get(secureRoute, answers.new);
 
 router.all('*', (req, res) => res.notFound());
 

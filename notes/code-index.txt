@@ -1,3 +1,10 @@
+<form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/questions/<%= content.id %>/answers/new">
+<input type="text" class="form-control mb-2 mr-sm-2" id="answer.comment" placeholder="Write your comment here" name="answer.comment">
+<button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+
+
+
 function rsvpDelete (req, res) {
   Rsvp
     .findById(req.params.id)

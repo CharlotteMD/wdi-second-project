@@ -11,7 +11,7 @@
     <label for="questions">Select a question</label>
     <select class="form-control" id="questions" name="questions">
        <% weddings.forEach((wedding) => { %>
-         <option><%= wedding.questions %></option>
+         <option><%= wedding.questions.content %></option>
         <% }) %>
     </select>
   </div>
