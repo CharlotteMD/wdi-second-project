@@ -44,13 +44,12 @@
         <div class="col-6">
           <h3><%= question.content %></h3>
           <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/questions/<%= question.id %>/answers">
-            <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Write your comment here" name="comment">
+            <textarea class="form-control" id="comment" rows="3" placeholder="Write your comment here" name="comment"></textarea>
             <button type="submit" class="btn btn-primary mb-2">Submit</button>
           </form>
           <div class="answers-container">
             <% question.answers.forEach((answer) => { %>
               <div class="slick-answers">
-
                 <p><%= answer.comment %></p>
               </div>
             <% }) %>
