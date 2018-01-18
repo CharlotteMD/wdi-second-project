@@ -24,7 +24,17 @@
             </form>
           <% } %>
           <% if (wedding.guests.indexOf(user.id) !== -1) { %>
-            <h2>You are a guest at this wedding</h2>
+            <div class="rsvpdGuests">
+              <div class="form-standard">
+                <form class="new-question" form method="POST" action="<%= wedding.id %>/questions">
+                  <div class="form-group">
+                    <label for="questions">Submit your question for the guest book</label>
+                    <textarea class="form-control" id="questions-new" rows="3" placeholder="Write your question for the guest book" name="content"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
           <% } else { %>
             <div class="noRsvp">
               <h2>You are not a guest at this wedding</h2>
@@ -42,15 +52,7 @@
     <div class="row">
       <div class="col-12">
         <% if (wedding.guests.indexOf(user.id) !== -1) { %>
-          <div class="form-standard">
-            <form class="new-question" form method="POST" action="<%= wedding.id %>/questions">
-              <div class="form-group">
-                <label for="questions">What is your question for the guest book?</label>
-                <textarea class="form-control" id="questions-new" rows="3" placeholder="Write your question for the guest book" name="content"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
+
         </div>
       </div>
       <div class="row">

@@ -213,6 +213,8 @@ a {
 
 .showWedding {
 
+  text-align: center;
+
   img {
     max-width: 90%;
     margin: 20px;
@@ -259,10 +261,25 @@ a {
     flex-direction: column;
     justify-content: center;
 
-    h2 {
-      text-decoration: none;
-      text-align: center;
-      color: $bright-color;
+  }
+
+  .new-question {
+    background-color: $bright-color;
+    margin: 20px;
+    border-radius: 25%;
+    font-size: 25px;
+  }
+
+  .rsvpdGuests {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    label {
+      font-family: $header-font;
+      color: $light-color;
+      font-size: 30px;
     }
   }
 
