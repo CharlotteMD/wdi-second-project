@@ -27,6 +27,7 @@
 
             <% if (wedding.guests.indexOf(user.id) !== -1) { %>
               <h1>You are a guest at this wedding</h1>
+              
 
               <div class="form-standard">
                 <form class="new-question" form method="POST" action="<%= wedding._id %>/questions">

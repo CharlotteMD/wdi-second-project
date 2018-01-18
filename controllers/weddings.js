@@ -54,7 +54,7 @@ function editWeddingRoute(req, res, next) {
     .exec()
     .then((wedding) => {
       if(!wedding) return res.notFound();
-      return res.render('weddings/edit', { wedding });
+      return res.render('weddings/${req.params.id}/edit', { wedding });
     })
     .catch(next);
 }
@@ -80,6 +80,8 @@ function updateWeddingRoute(req, res, next) {
 }
 
 function deleteWeddingRoute(req, res, next) {
+  req.body.createdBy._id = req.user;
+
   Wedding
     .findById(req.params.id)
     .exec()
@@ -87,7 +89,7 @@ function deleteWeddingRoute(req, res, next) {
       if(!wedding) return res.notFound();
       return wedding.remove();
     })
-    .then(() => res.redirect(`/users/${User.id}`))
+    .then(() => res.redirect(`/users/${req.user}`))
     .catch(next);
 }
 
