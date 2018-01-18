@@ -28,22 +28,17 @@
             <% if (wedding.guests.indexOf(user.id) !== -1) { %>
               <h1>You are a guest at this wedding</h1>
 
-  <div class="form-standard">
-    <form class="new-question" form method="POST" action="<%= wedding._id %>/questions">
-      <div class="form-group">
-        <label for="questions">What is your question for the guest book?</label>
-        <textarea class="form-control" id="questions-new" rows="3" placeholder="Write your question for the guest book" name="content"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
+              <div class="form-standard">
+                <form class="new-question" form method="POST" action="<%= wedding._id %>/questions">
+                  <div class="form-group">
+                    <label for="questions">What is your question for the guest book?</label>
+                    <textarea class="form-control" id="questions-new" rows="3" placeholder="Write your question for the guest book" name="content"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
 
-  <a href="/weddings/edit"><h4>Edit this Guest Book</h4></a>
 
-  <form action="/weddings/<%= wedding._id %>" method="POST">
-    <input type="hidden" name="_method" value="DELETE"/>
-    <button>Delete this Guest Book</button>
-  </form>
 
   <div class="index-questions container">
     <div class="row">
@@ -70,7 +65,15 @@
 <% }%>
 
 <% if (wedding.createdBy.id === user.id) { %>
-  <h3>The RSVP code for this Wedding is: <%= wedding.ref %></h3>
+  <h3>The RSVP code for your Guest Book is: <%= wedding.ref %></h3>
+
+  <a href="/weddings/edit"><h4>Edit this Guest Book</h4></a>
+
+  <form action="/weddings/<%= wedding._id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <button>Delete this Guest Book</button>
+  </form>
+
 <% } %>
 
 </div>
