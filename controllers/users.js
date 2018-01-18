@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Wedding = require('../models/wedding');
 
 function showRoute(req, res, next) {
   console.log('hitting');
@@ -51,16 +52,28 @@ function updateRoute(req, res, next) {
 }
 
 function deleteRoute(req, res, next) {
-// also need to add deleting any wedding book created by that user 
+// also need to add deleting any wedding book created by that user
 
   User
     .findById(req.params.id)
     .exec()
     .then((user) => {
+
+      Wedding
+        .find({createdBy: user })
+
+        .then((weddings) => {
+          console.log(weddings);
+          weddings.forEach((wedding) => {
+            return wedding.remove();
+          });
+
+        });
+
       if(!user) return res.notFound();
       return user.remove();
     })
-    .then(() => res.redirect('/index'))
+    .then(() => res.redirect('/'))
     .catch(next);
 }
 
