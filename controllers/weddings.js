@@ -36,10 +36,16 @@ function createWeddingRoute(req, res, next) {
     });
 }
 
+// User.findOne({ name: 'Val' }).populate({
+//     path: 'friends',
+//     // Get friends of friends - populate the 'friends' array for every friend
+//     populate: { path: 'friends' }
+// });
+
 function showWeddingRoute(req, res, next) {
   Wedding
     .findById(req.params.id)
-    .populate('createdBy')
+    .populate('createdBy questions.createdBy questions.answers.createdBy')
     .exec()
     .then((wedding) => {
       if(!wedding) return res.notFound();
