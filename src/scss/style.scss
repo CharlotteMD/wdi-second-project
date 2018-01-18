@@ -192,6 +192,38 @@ a {
   }
 }
 
+// Wedding profile
+
+.wedding-profile {
+
+  img {
+    max-width: 90%;
+    margin: 20px;
+    border: solid 10px $background-color;
+
+  }
+  button {
+    background: $bright-color;
+    border: solid $contrast-color 10px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+  }
+
+  button {
+    font-family: $header-font;
+    color: $dark-color;
+    font-size: 20px;
+  }
+
+  p {
+    text-decoration: none;
+    font-size: 15px;
+    color: $contrast-color;
+    font-family: $text-font;
+  }
+
+  }
 
 
 

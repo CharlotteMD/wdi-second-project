@@ -8,18 +8,25 @@
   </div>
 </div>
 
-<img src="<%= wedding.imageMain %>" alt="The happy couple">
+<div class="showWedding">
 
-<p><%= wedding.ref %></p>
+  <div class="wedding-profile">
+    <div class="row">
+      <div class="col-lg-6 col-sm-6 col-12">
+          <img src="<%= wedding.imageMain %>" alt="The happy couple">
+      </div>
+        <div class="userShow">
+          <div class=" col-lg-3 col-sm-3 col-12">
+            <p>Secret RSVP code: <%= wedding.ref %></p>
 
-<form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/guests">
-  <label class="sr-only" for="search-guest">Enter Guest Book RSVP code here</label>
-  <input type="text" class="form-control mb-2 mr-sm-2" id="ref" placeholder="RSVP ref" name="ref">
-  <button type="submit" class="btn btn-primary mb-2">Submit</button>
-</form>
+            <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/guests">
+              <label class="sr-only" for="search-guest">Enter Guest Book RSVP code here</label>
+              <input type="text" class="form-control mb-2 mr-sm-2" id="ref" placeholder="RSVP ref" name="ref">
+              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </form>
 
-<% if (wedding.guests.indexOf(user.id) !== -1) { %>
-  <h1>You are a guest at this wedding</h1>
+            <% if (wedding.guests.indexOf(user.id) !== -1) { %>
+              <h1>You are a guest at this wedding</h1>
 
   <div class="form-standard">
     <form class="new-question" form method="POST" action="<%= wedding._id %>/questions">
@@ -65,3 +72,5 @@
 <% if (wedding.createdBy.id === user.id) { %>
   <h3>The RSVP code for this Wedding is: <%= wedding.ref %></h3>
 <% } %>
+
+</div>
