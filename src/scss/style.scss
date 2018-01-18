@@ -211,7 +211,7 @@ a {
 
 // Wedding profile
 
-.wedding-profile {
+.showWedding {
 
   img {
     max-width: 90%;
@@ -244,6 +244,26 @@ a {
   h3 {
     text-decoration: none;
     color: $light-color;
+  }
+
+  h2 {
+    text-decoration: none;
+    text-align: center;
+    color: $bright-color;
+  }
+
+  .noRsvp {
+
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+      text-decoration: none;
+      text-align: center;
+      color: $bright-color;
+    }
   }
 
   }

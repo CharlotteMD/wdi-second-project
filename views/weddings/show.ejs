@@ -24,15 +24,17 @@
             </form>
           <% } %>
           <% if (wedding.guests.indexOf(user.id) !== -1) { %>
-            <p>You are a guest at this wedding</p>
+            <h2>You are a guest at this wedding</h2>
           <% } else { %>
-            <p>You are not a guest at this wedding</p>
-            <p>Secret RSVP code: <%= wedding.ref %></p>
-            <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/guests">
-              <label class="sr-only" for="search-guest">Enter Guest Book RSVP code here</label>
-              <input type="text" class="form-control mb-2 mr-sm-2" id="ref" placeholder="RSVP ref" name="ref">
-              <button type="submit" class="btn btn-primary mb-2">Submit</button>
-            </form>
+            <div class="noRsvp">
+              <h2>You are not a guest at this wedding</h2>
+              <p>Secret RSVP code: <%= wedding.ref %></p>
+              <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/guests">
+                <label class="sr-only" for="search-guest">Enter Guest Book RSVP code here</label>
+                <input type="text" class="form-control mb-2 mr-sm-2" id="ref" placeholder="RSVP ref" name="ref">
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+              </form>
+            </div>
           <% } %>
         </div>
       </div>
