@@ -1,6 +1,3 @@
-<%= wedding.createdBy.firstName %>
-
-
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">The Wedding of <%= wedding.partner1 %> &  <%= wedding.partner2 %></h1>
@@ -58,7 +55,7 @@
             <div class="col-4">
               <div class="guestbook">
                 <h3><%= question.content %></h3>
-                <h4><%= question.createdBy.firstName %></h4>
+                <h4>Submitted by: <%= question.createdBy.firstName %></h4>
                 <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/questions/<%= question.id %>/answers">
                   <textarea class="form-control" id="comment" rows="3" placeholder="Write your comment here" name="comment"></textarea>
                   <button type="submit" class="btn btn-primary mb-2">Submit</button>
@@ -66,8 +63,7 @@
                 <div class="answers-container">
                   <% question.answers.forEach((answer) => { %>
                     <div class="slick-answers">
-                      <p><%= answer.comment %></p>
-                      <p><%= answer.createdBy.firstName %> - <%= answer.comment %></p>
+                      <p>"<%= answer.comment %>", <%= answer.createdBy.firstName %></p>
                     </div>
                   <% }) %>
                 </div>
