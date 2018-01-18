@@ -8,6 +8,7 @@ $(() => {
     autoplaySpeed: 2000,
     infinite: true,
     prevArrow: false,
-    nextArrow: false
+    nextArrow: false,
+    dots: true
   });
 });

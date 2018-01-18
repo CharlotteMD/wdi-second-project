@@ -39,7 +39,7 @@
             <div class="noRsvp">
               <h2>You are not a guest at this wedding</h2>
               <p>Secret RSVP code: <%= wedding.ref %></p>
-              <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/guests">
+              <form class="rsvpSubmit form-inline" method="POST" action="/weddings/<%= wedding.id %>/guests">
                 <label class="sr-only" for="search-guest">Enter Guest Book RSVP code here</label>
                 <input type="text" class="form-control mb-2 mr-sm-2" id="ref" placeholder="RSVP ref" name="ref">
                 <button type="submit" class="btn btn-primary mb-2">Submit</button>
@@ -49,31 +49,27 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12">
-        <% if (wedding.guests.indexOf(user.id) !== -1) { %>
-
-        </div>
-      </div>
       <div class="row">
+        <% if (wedding.guests.indexOf(user.id) !== -1) { %>
           <% wedding.questions.forEach((question) => { %>
             <div class="col-4">
-              <h3><%= question.content %></h3>
-              <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/questions/<%= question.id %>/answers">
-                <textarea class="form-control" id="comment" rows="3" placeholder="Write your comment here" name="comment"></textarea>
-              <button type="submit" class="btn btn-primary mb-2">Submit</button>
-              </form>
-              <div class="answers-container">
-                <% question.answers.forEach((answer) => { %>
-                  <div class="slick-answers">
-                    <p><%= answer.comment %></p>
-                  </div>
-                <% }) %>
+              <div class="guestbook">
+                <h3><%= question.content %></h3>
+                <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/questions/<%= question.id %>/answers">
+                  <textarea class="form-control" id="comment" rows="3" placeholder="Write your comment here" name="comment"></textarea>
+                  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                </form>
+                <div class="answers-container">
+                  <% question.answers.forEach((answer) => { %>
+                    <div class="slick-answers">
+                      <p><%= answer.comment %></p>
+                    </div>
+                  <% }) %>
+                </div>
               </div>
             </div>
           <% }) %>
+        <% } %>
       </div>
-      <% } %>
     </div>
   </div>
-</div>
