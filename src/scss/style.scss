@@ -156,11 +156,28 @@ a {
 
 .user-profile {
 
+  margin: 50px;
+  background-image: url("../assets/images/hearts.png");
+
+  .user-image {
+  display: flex;
+
   img {
     max-width: 90%;
     margin: 20px;
     border: solid 10px $background-color;
+    justify-content: center;
+
   }
+  }
+
+  .user-buttons {
+    margin-top: 30%;
+    margin-right: 30px;
+
+  }
+
+
   h4, button {
     background: $light-color;
     border: solid $bright-color 10px;

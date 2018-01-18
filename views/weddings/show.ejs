@@ -7,9 +7,7 @@
     <% } %>
   </div>
 </div>
-
 <div class="showWedding">
-
   <div class="wedding-profile">
     <div class="row">
       <div class="col-lg-6 col-sm-6 col-12">
@@ -28,6 +26,7 @@
           <% if (wedding.guests.indexOf(user.id) !== -1) { %>
             <p>You are a guest at this wedding</p>
           <% } else { %>
+            <p>You are not a guest at this wedding</p>
             <p>Secret RSVP code: <%= wedding.ref %></p>
             <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/guests">
               <label class="sr-only" for="search-guest">Enter Guest Book RSVP code here</label>
@@ -42,7 +41,7 @@
       <div class="col-12">
         <% if (wedding.guests.indexOf(user.id) !== -1) { %>
           <div class="form-standard">
-            <form class="new-question" form method="POST" action="<%= wedding._id %>/questions">
+            <form class="new-question" form method="POST" action="<%= wedding.id %>/questions">
               <div class="form-group">
                 <label for="questions">What is your question for the guest book?</label>
                 <textarea class="form-control" id="questions-new" rows="3" placeholder="Write your question for the guest book" name="content"></textarea>
@@ -52,38 +51,25 @@
           </div>
         </div>
       </div>
-    </div>
-
-
-
-
-              <div class="index-questions container">
-                <div class="row">
-                  <% wedding.questions.forEach((question) => { %>
-                    <div class="col-6">
-                      <h3><%= question.content %></h3>
-                      <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/questions/<%= question.id %>/answers">
-                        <textarea class="form-control" id="comment" rows="3" placeholder="Write your comment here" name="comment"></textarea>
-                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
-                      </form>
-                <div class="answers-container">
+      <div class="row">
+          <% wedding.questions.forEach((question) => { %>
+            <div class="col-4">
+              <h3><%= question.content %></h3>
+              <form class="form-inline" method="POST" action="/weddings/<%= wedding.id %>/questions/<%= question.id %>/answers">
+                <textarea class="form-control" id="comment" rows="3" placeholder="Write your comment here" name="comment"></textarea>
+              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+              </form>
+              <div class="answers-container">
                 <% question.answers.forEach((answer) => { %>
-              <div class="slick-answers">
-                <p><%= answer.comment %></p>
+                  <div class="slick-answers">
+                    <p><%= answer.comment %></p>
+                  </div>
+                <% }) %>
               </div>
-            <% }) %>
-          </div>
-        </div>
-      <% }) %>
+            </div>
+          <% }) %>
+      </div>
+      <% } %>
     </div>
   </div>
-<% } else { %>
-  <h1>You are not a guest at this wedding</h1>
-<% }%>
-
-
-
-</div>
-
-
 </div>

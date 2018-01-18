@@ -4,25 +4,31 @@
   </div>
 </div>
 
-<div class="user-profile">
-  <div class="row">
+<div>
+  <div class="row user-profile">
     <div class="col-lg-6 col-sm-6 col-12">
-      <img src="<%= `${user.image}` %>" alt="User image">
+      <div class="user-image">
+        <img src="<%= `${user.image}` %>" alt="User image">
+      </div>
     </div>
-    <div class="userShow">
-      <div class=" col-lg-3 col-sm-3 col-12">
+    <div class=" col-lg-3 col-sm-3 col-12">
+      <div class="user-buttons">
         <a href="<%= user.id %>/edit"><h4>Edit Your Profile</h4></a>
         <form action="/users/<%= user._id %>" method="POST">
           <input type="hidden" name="_method" value="DELETE"/>
           <button>Delete Your Profile</button>
         </form>
-        <div class=" col-lg-3 col-sm-3 col-12">
-          <a href="/weddings/new"><h4>Create a new Guest Book</h4></a>
-          <a href="/weddings"><h4>View Guest Books</h4></a>
-        </div>
+      </div>
+    </div>
+    <div class=" col-lg-3 col-sm-3 col-12">
+      <div class="user-buttons">
+        <a href="/weddings/new"><h4>Create a new Guest Book</h4></a>
+        <a href="/weddings"><h4>View Guest Books</h4></a>
       </div>
     </div>
   </div>
+</div>
+
 
   <div class="user-instructions">
     <h2>Welcome to your user profile, <%= user.firstName %></h2>
