@@ -178,6 +178,8 @@ a {
 }
 
 .user-instructions {
+  margin: 20px 50px;
+
   h2, h3 {
   text-align: center;
 }
@@ -270,3 +272,24 @@ a {
     }
   }
 }
+
+footer {
+    background-image: url("../assets/images/jumbolove.png");
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+
+    h2 {
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    a {
+      font-size: 15px;
+      padding: 5px 20px;
+    }
+}
+
+// .pageEnd {
+//   background-image: url("../assets/images/hearts.png");
+// }
