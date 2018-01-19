@@ -24,6 +24,19 @@ Easy as that!
 
 [**Heroku**](https://guestbook-charmd.herokuapp.com/)
 
+To Use The App
+-----------
+All guest books have a secret RSVP code which only the creater of the guest book can see.  This code would need to be given to guests separately.
+
+Example codes are as follows:
+
+* Meghan & Jake - 5632
+* Sunshine & Harrison - 9451
+* Lucy & Heather - 9526
+* Shawn & Ameera - 7829
+* Ben & Alfie - 5634
+
+
 Technologies Used
 -----------
 

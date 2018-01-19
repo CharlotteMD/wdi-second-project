@@ -5,7 +5,7 @@
     <h1 class="display-4">The Wedding of <%= wedding.partner1 %> &  <%= wedding.partner2 %></h1>
 
     <% if (wedding.guests.indexOf(user.id) !== -1) { %>
-      <h2><%= wedding.date.toDateString() %>,<%= wedding.venue %></h2>
+      <h2><%= wedding.venue %></h2>
     <% } %>
   </div>
 </div>
