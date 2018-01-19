@@ -31,7 +31,6 @@ const weddingSchema = new mongoose.Schema({
   date: { type: Date },
   venue: { type: String, required: true },
   imageMain: { type: String, required: true },
-  // createrEmail: { type: String, required: true },
   guests: [{ type: mongoose.Schema.ObjectId, ref: 'User'}],
   questions: [ questionSchema ]
 }, {

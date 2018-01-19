@@ -3,7 +3,6 @@
 // Navbar styling
 .brand {
   width: 120px;
-
 }
 
 
@@ -55,7 +54,6 @@ body {
   font-family: $text-font;
   justify-content: center;
   margin: 0 auto;
-  // max-width: 1000px;
 }
 
 h1 {
@@ -137,7 +135,6 @@ a {
 // Login page styling
 
 .login {
-  // justify-content: center;
 
   img {
     max-width: 90%;
@@ -214,8 +211,6 @@ a {
 .showWedding {
 
   text-align: center;
-  // background-image: url("../assets/images/hearts.png");
-  // background-size: 50%;
 
   img {
     max-width: 90%;
@@ -304,8 +299,6 @@ a {
    form {
      background-color: $contrast-color;
      margin: 10px;
-
-
    }
 
     button {
@@ -391,13 +384,7 @@ a {
     font-weight: bold;
     font-size: 25px;
     border: $dark-color 5px;
-    // how do i get the button in the center?
 
-    button :hover {
-      background-color: $bright-color;
-      color: $dark-color;
-      border: $bright-color 5px;
-      // why isnt this working
     }
   }
 
@@ -448,9 +435,9 @@ footer {
 @media only screen and (max-width: 350px) {
 
   .navbar {
-     font-size: 5rem;
-    h1 {
 
+    h1 {
+      font-size: 5rem;
     }
   }
 }
