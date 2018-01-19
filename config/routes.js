@@ -64,27 +64,14 @@ router.route('/weddings/:id/questions/:questionId')
 
 // Answers Routes
 router.route('/weddings/:id/questions/:questionId/answers')
-// router.route('/weddings/:id/questions/:questionId/answers')
-  // .get(questions.index)
   .post(answers.create);
 
-// router.route('/weddings/:id/')
-//   // .get(secureRoute, questions.show)
-//   .put(secureRoute, questions.update)
-//   // .delete(secureRoute, answers.delete);
-
 // Edit User
-// Only accessible by user
+
 router.route('/users/:id/edit')
   .get(secureRoute, users.edit);
 
-// Edit Wedding
-// Only accessible by createdby or fiance
-
-
-
 // Edit Answers
-// Only accessible by createdby or wedding createdby or fiance
 router.route('/answers/:id/edit')
   .get(secureRoute, answers.edit);
 

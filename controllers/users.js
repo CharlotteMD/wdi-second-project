@@ -2,13 +2,11 @@ const User = require('../models/user');
 const Wedding = require('../models/wedding');
 
 function showRoute(req, res, next) {
-  console.log('hitting');
   User
     .findById(req.params.id)
     .populate('createdBy')
     .exec()
     .then((user) => {
-      console.log('hitting');
       if(!user) return res.notFound();
       return res.render('users/show', { user });
     })
@@ -16,13 +14,11 @@ function showRoute(req, res, next) {
 }
 
 function editRoute(req, res, next) {
-  console.log('I\'m in the controller');
   User
     .findById(req.params.id)
     .exec()
     .then((user) => {
       if(!user) return res.notFound();
-      console.log('I\'m the user ------------>', user);
       return res.render('users/edit', { user });
     })
     .catch(next);
@@ -38,7 +34,6 @@ function updateRoute(req, res, next) {
     .exec()
     .then((user) => {
       if(!user) return res.notFound();
-      console.log('hitting update err');
 
       user = Object.assign(user, req.body);
 
@@ -54,8 +49,6 @@ function updateRoute(req, res, next) {
 }
 
 function deleteRoute(req, res, next) {
-// also need to add deleting any wedding book created by that user
-
   User
     .findById(req.params.id)
     .exec()

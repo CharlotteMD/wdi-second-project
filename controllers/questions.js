@@ -2,11 +2,6 @@ const Wedding = require('../models/wedding');
 
 
 function createQuestionRoute(req, res, next) {
-
-  // take question from form
-  // take user id of person logged in
-  // take id of wedding from url
-  // push question submitted on form to questions in weddings schema
   req.body.createdBy = req.user;
 
   Wedding
@@ -30,7 +25,6 @@ function deleteQuestionRoute(req, res, next) {
       return question.remove();
     })
     .then(() => res.redirect('/wedding/<%= req.id %>', { Wedding }))
-    // how do I find which wedding this is linked to?
     .catch(next);
 }
 

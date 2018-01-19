@@ -9,15 +9,12 @@ function indexWeddingRoute (req, res) {
       res.render('weddings/index', { weddings });
     })
 
-  // search ref from user profile page - if ref found, take user to that wedding page and add their user id to wedding guest schema so they can comment on the page
-
     .catch((err) => {
       res.status(500).render('error', { err });
     });
 }
 
 function newWeddingRoute(req, res) {
-  console.log('in new wedding route');
   return res.render('weddings/new');
 }
 
@@ -35,12 +32,6 @@ function createWeddingRoute(req, res, next) {
       next(err);
     });
 }
-
-// User.findOne({ name: 'Val' }).populate({
-//     path: 'friends',
-//     // Get friends of friends - populate the 'friends' array for every friend
-//     populate: { path: 'friends' }
-// });
 
 function showWeddingRoute(req, res, next) {
   Wedding
@@ -100,16 +91,12 @@ function deleteWeddingRoute(req, res, next) {
 }
 
 function addGuestToWedding(req, res, next) {
-  // get id of current user
-  // get ref of submitted form
   const currentUserId = req.user.id;
   const userRef       = req.body.ref;
 
   Wedding
     .findById(req.params.id)
     .then(wedding => {
-      // compare the wedding ref with the userRef
-
       if (wedding.ref === userRef) {
         wedding.guests.push(currentUserId);
         return wedding.save();
