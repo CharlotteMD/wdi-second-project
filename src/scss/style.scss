@@ -2,7 +2,8 @@
 
 // Navbar styling
 .brand {
-  max-width: 5%;
+  width: 120px;
+
 }
 
 
@@ -15,16 +16,12 @@
     color: $background-color;
     font-size: 30px;
     padding-left: 30px;
+  }
 
-    ul {
-      display: flex;
-
-
-      li {
-        justify-content: space-around;
-
-      }
-    }
+  .navbar-toggler {
+    border-color: $bright-color;
+    color: $bright-color;
+    margin-left: 60px;
   }
 }
 
