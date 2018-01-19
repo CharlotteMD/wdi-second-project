@@ -448,3 +448,13 @@ footer {
       padding: 5px 20px;
     }
 }
+
+@media only screen and (max-width: 350px) {
+
+  .navbar {
+     font-size: 5rem;
+    h1 {
+
+    }
+  }
+}

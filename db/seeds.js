@@ -239,7 +239,7 @@ User
         partner1: 'Shawn',
         partner2: 'Ameera',
         venue: 'St Frances Cloisters',
-        imageMain: 'https://cdn.pixabay.com/photo/2017/08/06/18/05/bokeh-2594745_1280.jpg',
+        imageMain: 'https://static.pexels.com/photos/262008/pexels-photo-262008.jpeg',
         questions: [{
           content: 'How long till Shawn and Ameera start a family?',
           createdBy: users[3],
