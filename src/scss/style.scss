@@ -329,14 +329,26 @@ a {
       margin: 20px;
 
       p {
-      
+
       }
     }
   }
 }
 
 
+// 404error
 
+.error {
+  margin: 30px;
+
+  h2 {
+    font-size: 40px;
+  }
+
+  p {
+    text-decoration: none;
+  }
+}
 
 
 .form-standard {
