@@ -105,6 +105,7 @@ Problems?
 
 1. At first I found the controllers complicated to get my head around - I have learnt a lot about this from this project and now am feeling much more confident
 2. Time. I hadn't appreciated how ambitious my idea was with models referenced within models. This took a lot of time to work out the logic for and took away time to develop some of the front end effects that I would have liked to add.
+3. The seeds file took a while to work out due to all the embedded models needed to make the app work.  I still need to fix the date function within this file.
 
 
 Features to Add
