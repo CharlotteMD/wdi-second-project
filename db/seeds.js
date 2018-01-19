@@ -211,7 +211,7 @@ User
         partner1: 'Lucy',
         partner2: 'Heather',
         venue: 'Hathaway Hall',
-        imageMain: 'https://static.pexels.com/photos/260141/pexels-photo-260141.jpeg',
+        imageMain: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX9naUx7ZLx29Bf50CUqdog6t4E4N3MFUEURkTLffqSQsd2Z3h',
         questions: [{
           content: 'Whose Mum will be first on the dance floor?',
           createdBy: users[0],
