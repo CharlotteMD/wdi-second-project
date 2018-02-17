@@ -5,39 +5,42 @@
   </div>
 </div>
 
-<div class="form-standard">
+<div class="container">
 
-<form class="new-wedding" form method="POST" action="/weddings">
-  <div class="form-row">
-    <div class="col">
-      <label for="partner1" id="partner1">Who is getting married?</label>
-      <input type="text" class="form-control" placeholder="Name" name="partner1">
-    </div>
-    <div class="col">
-      <label for="partner2" id="partner2">To who?</label>
-      <input type="text" class="form-control" placeholder="Name" name="partner2">
-    </div>
+  <div class="form-standard">
+
+    <form class="new-wedding" form method="POST" action="/weddings">
+      <div class="form-row">
+        <div class="col">
+          <label for="partner1" id="partner1">Who is getting married?</label>
+          <input type="text" class="form-control" placeholder="Name" name="partner1">
+        </div>
+        <div class="col">
+          <label for="partner2" id="partner2">To who?</label>
+          <input type="text" class="form-control" placeholder="Name" name="partner2">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="date">Date</label>
+          <input type="date" class="form-control" placeholder="Date" id="date" name="date">
+        </div>
+        <div class="col">
+          <label for="venue" id="venue">Venue</label>
+          <input type="text" class="form-control" placeholder="Venue" name="venue">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="imageMain">Photo of the happy couple</label>
+          <input type="text" class="form-control" placeholder="Insert link to photo of the couple" id="imageMain" name="imageMain">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
   </div>
-
-  <div class="form-row">
-    <div class="col">
-      <label for="date">Date</label>
-      <input type="date" class="form-control" placeholder="Date" id="date" name="date">
-    </div>
-    <div class="col">
-      <label for="venue" id="venue">Venue</label>
-      <input type="text" class="form-control" placeholder="Venue" name="venue">
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="col">
-      <label for="imageMain">Photo of the happy couple</label>
-      <input type="text" class="form-control" placeholder="Insert link to photo of the couple" id="imageMain" name="imageMain">
-    </div>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
 </div>

@@ -5,41 +5,44 @@
   </div>
 </div>
 
-<div class="form-standard">
+<div class="container">
 
-<form class="new-user" form method="POST" action="/register">
-  <div class="form-row">
-    <div class="col">
-      <label for="firstName">First name</label>
-      <input type="text" class="form-control" placeholder="First name" id="firstName" name="firstName">
-    </div>
-    <div class="col">
-      <label for="lastName">Last name</label>
-      <input type="text" class="form-control" placeholder="Last name" id="lastName" name="lastName">
-    </div>
+  <div class="form-standard">
+
+    <form class="new-user" form method="POST" action="/register">
+      <div class="form-row">
+        <div class="col">
+          <label for="firstName">First name</label>
+          <input type="text" class="form-control" placeholder="First name" id="firstName" name="firstName">
+        </div>
+        <div class="col">
+          <label for="lastName">Last name</label>
+          <input type="text" class="form-control" placeholder="Last name" id="lastName" name="lastName">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" placeholder="Email" id="email" name="email">
+        </div>
+        <div class="col">
+          <label for="password" id="password">Password</label>
+          <input type="password" class="form-control" placeholder="Password" name="password">
+        </div>
+        <div class="col">
+          <label for="password">Confirm password</label>
+          <input type="password" class="form-control" placeholder="Confirm">
+        </div>
+      </div>
+
+      <div class="images">
+        <label for="image" name="image">Your profile picture</label>
+        <input type="text" class="form-control" placeholder="Include a link to a photo of you" id="image" name="image">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
-
-  <div class="form-row">
-    <div class="col">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" placeholder="Email" id="email" name="email">
-    </div>
-    <div class="col">
-      <label for="password" id="password">Password</label>
-      <input type="password" class="form-control" placeholder="Password" name="password">
-    </div>
-    <div class="col">
-      <label for="password">Confirm password</label>
-      <input type="password" class="form-control" placeholder="Confirm">
-    </div>
-  </div>
-
-  <div class="images">
-    <label for="image" name="image">Your profile picture</label>
-    <input type="text" class="form-control" placeholder="Include a link to a photo of you" id="image" name="image">
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
 
 </div>

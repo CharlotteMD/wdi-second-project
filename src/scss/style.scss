@@ -115,11 +115,13 @@ a {
     text-decoration: none;
     text-align: center;
     color: $light-color;
+    font-size: 30px;
   }
 
   li {
     font-family: $text-font;
     color: $dark-color;
+    font-size: 20px;
   }
 
   p {
@@ -150,7 +152,7 @@ a {
 .user-profile {
 
   margin: 50px;
-  background-image: url("../assets/images/hearts.png");
+  // background-image: url("../assets/images/hearts.png");
   text-align: center;
 
   .user-image {
@@ -309,6 +311,7 @@ a {
 
     h3 {
       color: $bright-color;
+      font-family: $text-font;
     }
 
     ul {
@@ -318,6 +321,7 @@ a {
       li {
         list-style: none;
         display: inline;
+        font-family: $text-font;
 
         button {
           font-size: 10px;
@@ -421,6 +425,7 @@ footer {
     h2 {
       text-decoration: none;
       font-size: 20px;
+      font-family: $text-font;
     }
 
     a {
