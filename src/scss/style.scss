@@ -63,7 +63,7 @@ h1 {
 }
 
 h2 {
-  font-family: $header-font;
+  font-family: $text-font;
   font-weight: bold;
   color: $contrast-color;
   text-decoration: underline;
@@ -295,6 +295,7 @@ a {
 
   .guestbook {
     margin: 10px;
+    height: 500px;
     padding: 10px;
     background-color: $dark-color;
 
@@ -339,6 +340,7 @@ a {
     .slick-answers {
       padding: 50px;
       margin: 20px;
+      height: 185px;
 
       p {
 
